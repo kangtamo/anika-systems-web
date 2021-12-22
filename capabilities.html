@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+   <head>
+      <!--- basic page needs
+         ================================================== -->
+      <meta charset="utf-8"/>
+      <meta name="author" content="Nikhil Koneru" />
+      <meta name="description" content="Anika Sytems">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <!-- CSS
+         ================================================== -->
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/vendor.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- script
+         ================================================== -->
+      <script src="js/modernizr.js"></script>
+      <script src="js/pace.min.js"></script>
+      <!-- favicons
+         ================================================== -->
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      <link rel="icon" href="images/logosmall.png">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Cinzel:700" rel="stylesheet">
+      <!-- Parallax File -->
+      <script type="text/javascript" src="js/parallax.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700i" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/ionicons.min.css" rel="stylesheet">
+      <link href="css/pe-icon-7-stroke.css" rel="stylesheet">
+      <!-- Alternate Stylesheets / choose what color and base you want and include the 2 files regularly AFTER style.css above -->
+      <link rel="stylesheet" type="text/css" href="css/colors/red.css" title="red">
+      <!-- Alternate Stylesheets / choose what color and base you want and include the 2 files regularly AFTER style.css above -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+      <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+
+      <!-- Royal Preloader -->
+      <style type="text/css">
+          html{
+         font-family: 'Montserrat', sans-serif!important;
+       }
+          body {
+          font-family: 'Montserrat', sans-serif!important;
+       }
+         .circular--landscape {
+         display: inline-block;
+         position: relative;
+         width: auto;
+         height: auto;
+         overflow: hidden;
+         }
+         .circular--landscape img {
+         width: 300px;
+         height: 100%;
+         }
+         .btn-outline-success {
+         margin-top: 15px!important;
+         border-width: 2px!important;
+         background-color: white;
+         color: #fe0010;
+         border-color: #fe0010!important;
+         border-radius: 40px!important;
+         width: 140px;
+         height: 45px;
+         font-size: 14px!important;
+         font-weight: 700!important;
+         font-family: 'Montserrat', sans-serif!important;
+         text-transform: uppercase!important;
+         padding: 10px 15px!important;
+         letter-spacing: .8px!important;
+         }
+         .btn-outline-success:hover {
+         color: white!important;
+         font-size: 15px;
+         font-weight: 800;
+         font-family: 'Montserrat', sans-serif!important;
+         text-transform: uppercase;
+         padding: 10px 15px;
+         letter-spacing: .8px;
+         }
+         .dropdown-item {
+         position: relative;
+         padding: 10px 20px;
+         border-bottom: 0px;
+         }
+         .app-header .nav-item .nav-link {
+         padding-top: 5px;
+         padding-bottom: 5px;
+         background: 0;
+         border: 0;
+         }
+         .header-fixed .app-header{
+         position: fixed;
+         z-index: 1020;
+         width: 100%;
+         height: 80px;
+         }
+         .navbar-nav>li>.dropdown-menu {
+         margin-top: 20px;
+         position: absolute;
+         z-index: 0px;
+         padding: 0px;
+         }
+         .dropdown-menu.subwok {
+         left: 50%;
+         transform: translateX(-50%);
+         z-index: 100;
+         -webkit-box-shadow: 0px 10px 10px #777;
+         -moz-box-shadow: 0px 10px 10px #777;
+         box-shadow: 0px 10px 10px #777;
+         }
+          .navbar-default .navbar-nav > li > a {
+         font-size: 14px!important;
+         text-transform: uppercase;
+         font-weight: 700!important;
+         /*  padding: 10px 15px;*/
+         letter-spacing: .2px!important;
+
+         }
+         .dropdown-menu > li > a {
+
+         font-family: 'Montserrat', sans-serif!important;
+         text-transform: capitalize;
+         /*padding: 8px 15px;*/
+         letter-spacing: .7px;
+         }
+         .dropdown-item{
+         font-size: 12px;
+         font-weight: 600;
+         font-family: 'Montserrat', sans-serif!important;
+         text-transform: uppercase;
+         padding: 10px 15px;
+         padding-top: 10px;
+         letter-spacing: .8px;
+         }
+         .navbar-nav > li{
+         padding-left:0px;
+         padding-right:0px;
+         }
+         button.btn.btn-outline-success.my-2.my-sm-0:hover {
+         background: red;
+         border: red;
+         }
+         .dropdown-submenu {
+         position: relative;
+         }
+         .dropdown-submenu .dropdown-menu {
+         top: 0;
+         left: 100%;
+         margin-top: -1px;
+         }
+         .indextsize{
+         font-family: 'Montserrat', sans-serif!important;
+         font-size: 60px!important;
+         font-weight: bold;
+         }
+         .subtsize{
+         font-family: 'Montserrat', sans-serif!important;
+         font-size: 20px!important;
+         font-weight: bold!important;
+         }
+         .indexscsize{
+         font-weight: bold!important;
+         }
+         .headingindex{
+         font-weight: bold!important;
+         font-size: 20px!important;
+         }
+         .txtoa b{
+         font-weight: 300;
+         font-size: 20px!important;
+         }
+         .black{
+         background-color: black!important;
+         }
+         /* Underline From Center */
+         .hvr-underline-from-center {
+         display: inline-block;
+         vertical-align: middle;
+         -webkit-transform: translateZ(0);
+         transform: translateZ(0);
+         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+         -webkit-backface-visibility: hidden;
+         backface-visibility: hidden;
+         -moz-osx-font-smoothing: grayscale;
+         position: relative;
+         overflow: hidden;
+         }
+         .hvr-underline-from-center:before {
+         content: "";
+         position: absolute;
+         z-index: -1;
+         left: 50%;
+         right: 50%;
+         bottom: 0;
+         background: red;
+         height: 4px;
+         -webkit-transition-property: left, right;
+         transition-property: left, right;
+         -webkit-transition-duration: 0.3s;
+         transition-duration: 0.3s;
+         -webkit-transition-timing-function: ease-out;
+         transition-timing-function: ease-out;
+         }
+         .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+         left: 0;
+         right: 0;
+         }
+         /* Shutter Out Horizontal */
+         .hvr-shutter-out-horizontal {
+         display: inline-block;
+         vertical-align: middle;
+         -webkit-transform: translateZ(0);
+         transform: translateZ(0);
+         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+         -webkit-backface-visibility: hidden;
+         backface-visibility: hidden;
+         -moz-osx-font-smoothing: grayscale;
+         position: relative;
+         -webkit-transition-property: color;
+         transition-property: color;
+         -webkit-transition-duration: 0.3s;
+         transition-duration: 0.3s;
+         }
+         .hvr-shutter-out-horizontal:before {
+         content: "";
+         position: absolute;
+         z-index: -1;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         background: #2098d1;
+         -webkit-transform: scaleX(0);
+         transform: scaleX(0);
+         -webkit-transform-origin: 50%;
+         transform-origin: 50%;
+         -webkit-transition-property: transform;
+         transition-property: transform;
+         -webkit-transition-duration: 0.3s;
+         transition-duration: 0.3s;
+         -webkit-transition-timing-function: ease-out;
+         transition-timing-function: ease-out;
+         }
+         .hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
+         color: #fff;
+         }
+         .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
+         -webkit-transform: scaleX(1);
+         transform: scaleX(1);
+         }
+         /* Fix bootstrap */
+         .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:active {
+         background: none;
+         color: #fff;
+         }
+         .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open>a:focus, .navbar-default .navbar-nav > .open > a:active {
+         background: none;
+         color: #555;
+         }
+
+         .backgroundclass{
+            background-color: black;
+         }
+
+         .text-color{
+            color: white;
+         }
+         .anchor {
+    display: block;
+    height: 92px;
+    margin-top: -92px;
+    visibility: hidden;
+}
+     .anchor-small {
+    display: block;
+    height: 20px;
+    margin-top: -20px;
+    visibility: hidden;
+}
+@media only screen and (max-width: 600px){
+.row {
+    width: auto;
+     padding-left: 0px;
+     padding-right: 0px;
+}
+}
+
+@media only screen and (max-width: 800px){
+.row {
+     width: auto;
+}}
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px!important;
+    margin-right: 15px;
+    margin-bottom: 8px!important;
+    background-image: none;
+    border: 1px solid transparent;
+
+}
+    .dropdown-menu > li > a {
+    display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: 550;
+    line-height: 1.42857;
+    color: #FFF!important;
+    white-space: nowrap;
+    font-size: 14px;
+}
+.navbar-nav>li>.dropdown-menu {
+    margin-top: 0px;
+    position: absolute;
+    z-index: 0px;
+    padding-top: 10px;
+}
+.dropdown-menu {
+    background-color: #3C3C3C;
+    border: 0px;
+    border-radius: 0px;
+    min-width: 150px;
+    box-shadow: none;
+    padding: 12px 0;
+}
+.dropdown-menu {
+   background-color: #3C3C3C;
+}
+.responsive{
+    height: 80px;
+    width: 80px;
+}
+.
+@media screen and (max-width: 600px) {
+.responsive{
+    height: 30px;
+    width: 30px;
+}
+}
+@media screen and (max-width: 992px) {
+.responsive{
+    height: 40px;
+    width: 40px;
+}
+}
+.img-responsive{
+   width: auto;
+   height: 50px;
+}
+.dropdown-menu > li > a {
+         display: block;
+         padding: 3px 10px;
+         clear: both;
+         font-weight: 550;
+         line-height: 1.42857;
+         color: black!important;
+         white-space: nowrap;
+         font-size: 14px;
+         }
+         .navbar-nav>li>.dropdown-menu {
+         margin-top: 0px;
+         position: absolute;
+         z-index: 0px;
+         padding-top: 10px;
+         }
+         .dropdown-menu {
+         background-color: #fff!important;
+         border: 0px;
+         border-radius: 0px;
+         min-width: 150px;
+         box-shadow: none;
+         padding: 12px 0;
+         }
+         ul.nav li.dropdown:hover ul.dropdown-menu {
+         display: block;
+         }
+         .colorbox{
+         font-weight: bold!important;
+         font-family: font-family: 'Montserrat', sans-serif!important;
+         }
+         .nav >a:focus, .nav>a:hover, .colorbox:focus, .colorbox:hover {
+         background-color: red!important;
+         color: white!important;
+         border-color: none;
+         }
+
+.navbar-nav>li>.dropdown-menu {
+
+    position: absolute;
+    z-index: 0px;
+    padding: 0px;
+    min-width: 15vw!important;
+}
+.navbar-nav .dropdown-menu > li > a {
+    white-space: normal;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.navbar-nav.sm-collapsible .caret, .navbar-nav.sm-collapsible ul .caret{
+    margin-top: 0px!important;
+}
+         .main-menu-btn {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  text-indent: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+/* hamburger icon */
+.main-menu-btn-icon, .main-menu-btn-icon:before, .main-menu-btn-icon:after {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  height: 2px;
+  width: 24px;
+  background: white;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.main-menu-btn-icon:before {
+  content: '';
+  top: -7px;
+  left: 0;
+}
+.main-menu-btn-icon:after {
+  content: '';
+  top: 7px;
+  left: 0;
+}
+/* x icon */
+#main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon {
+  height: 0;
+  background: transparent;
+}
+#main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:before {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:after {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* hide menu state checkbox (keep it visible to screen readers) */
+#main-menu-state {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+}
+/* hide the menu in mobile view */
+#main-menu-state:not(:checked) ~ #main-menu {
+  display: none;
+}
+#main-menu-state:checked ~ #main-menu {
+  display: block;
+}
+@media (min-width: 768px) {
+  /* hide the button in desktop view */
+  .main-menu-btn {
+    position: absolute;
+    top: -99999px;
+  }
+  /* always show the menu in desktop view */
+  #main-menu-state:not(:checked) ~ #main-menu {
+    display: block;
+  }
+}
+
+
+@media (min-width: 768px){
+.right {
+    float: right!important;
+     margin-right: 50px!important;
+}}
+.navbar-nav.sm-collapsible .caret, .navbar-nav.sm-collapsible ul .caret {
+    width: 40px;
+}
+      </style>
+      <!-- Stylesheets -->
+
+   </head>
+   <body id="top" style="background-color: white;">
+      <!-- header
+         ================================================== -->
+      <!-- Begin Header -->
+      <header>
+         <!-- Begin Navigation -->
+         <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+               <div class="row">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header" >
+                     <button id="mobilemenu" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                     <input id="main-menu-state" type="checkbox" />
+<label class="main-menu-btn" for="main-menu-state">
+  <span class="main-menu-btn-icon"></span>
+</label>
+                     </button>
+                     <a class="navbar-brand scroll-link" href="index.html" data-id="home"><img style="position: absolute; top: 8px;" src="images/Logo.png" width="200px"></a>
+                  </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                     <ul class="nav navbar-nav right">
+                        <li><a  class="hvr-underline-from-center" href="index.html#approach" data-id="home" style="color: white;"><b>Philosophy</b></a></li>
+                       <li>
+                           <a class="hvr-underline-from-center" href="capabilities.html">What We Do<span class="caret"></span></a>
+                           <ul class="dropdown-menu">
+                              <li>
+                                 <a class="colorbox" href="capabilities.html">Capabilities<span class="caret"></span></a>
+                                 <ul class="dropdown-menu">
+                                    <li>
+                                       <a class="colorbox" href="capabilities.html#capabilitiesspan">Data and Analytics</a>
+                                    </li>
+                                    <li>
+                                       <a class="colorbox" href="capabilities.html#iaspan">Intelligent Automation</a>
+                                    </li>
+                                    <li>
+                                       <a class="colorbox" href="capabilities.html#apdspan">Application Development</a>
+                                    </li>
+                                    <li>
+                                       <a class="colorbox" href="capabilities.html#emspan">IT Modernization</a>
+
+                                    </li>
+                                    <li>
+                                       <a class="colorbox" href="capabilities.html#csspan">Cloud Engineering</a>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <a class="colorbox" href="capabilities.html#techspan">Partners<span class="caret"></span></a>
+                                 <ul class="dropdown-menu">
+                                    <li><a class="colorbox" href="capabilities.html#techspan">Microsoft Azure</a></li>
+                                    <li><a class="colorbox" href="capabilities.html#cloudbees">Cloud Bees</a></li>
+                                    <li><a class="colorbox" href="capabilities.html#uipath">UI Path</a></li>
+                                    <li><a class="colorbox" href="capabilities.html#redhat">Red Hat</a></li>
+                                    <li><a class="colorbox" href="capabilities.html#pg">Pivotal GreenPlum</a></li>
+                                    <li><a class="colorbox" href="capabilities.html#tu">Tableau</a></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </li>
+                        <li><a class="hvr-underline-from-center" href="whoweare.html" data-id="home" style="color: white;">Who We Are</a></li>
+                        <li><a class="hvr-underline-from-center" href="contracts.html" data-id="home" style="color: white;">Contracts</a></li>
+                        <li><a class="hvr-underline-from-center" href="careers.html" data-id="home" style="color: white;">Careers</a></li>
+                        <li><button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href='contact.html'" type="submit">Contact</button></li>
+                     </ul>
+                  </div>
+                  <!-- /.navbar-collapse -->
+               </div>
+            </div>
+            <!-- /.container-fluid -->
+         </nav>
+         <!-- End Navigation -->
+      </header>
+      <!-- End Header -->
+      <!-- home
+         ================================================== -->
+      <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/capcover2.jpg" data-natural-width=3000 data-natural-height=2000 data-position-y=top>
+         <div class="shadow-overlay"></div>
+         <div class="home-content">
+            <div class="container">
+               <div class="row home-content__main">
+                  <h1>What We Do</h1>
+               </div>
+               <!-- end home-content__main -->
+            </div>
+         </div>
+         <!-- end home-content -->
+         <ul class="home-sidelinks">
+            <!-- <li><a  class="smoothscroll" href="#capabilitiesspan"><b>Capabilities</b></a></li> -->
+           <!--  <li><a class="smoothscroll" href="#services"><b>Our Methodology </b></a></li> -->
+            <!-- <li><a class="smoothscroll" href="#techspan"><b>Partners</b></a></li> -->
+         </ul>
+         <!-- end home-sidelinks -->
+
+         <!-- end home-social -->
+         <a href="#capabilitiesspan" class="home-scroll smoothscroll">
+         <span class="home-scroll__text">Scroll Down</span>
+         <span class="home-scroll__icon"></span>
+         </a> <!-- end home-scroll -->
+      </section>
+      <!-- end s-home -->
+      <!-- about
+         ================================================== -->
+         <span class="anchor" id="capabilitiesspan"></span>
+         <section id="capabilities" class="s-about backgroundclass" style="padding-top:2rem;padding-bottom: 1rem;">
+         <div class="container">
+            <div class="row section-header" data-aos="fade-up">
+               <div class="col-full">
+                  <h3 class="subhead">Capabilities</h3>
+
+                  <h1 class="display-1 text-color"><span class=" services-icon"><img class="responsive" src="iconset/dataandanalytics.png"></span> Data and Analytics</h1>
+               </div>
+            </div>
+            <!-- end section-header -->
+         </div>
+         <div class="container">
+            <div class="row" data-aos="fade-up">
+               <div class="col-full">
+                  <p class="lead text-color" style="color: white">
+                     Data is a strategic asset for all federal agencies which can help them in making informed decisions that can save lives, spend taxpayer dollars efficiently, detect and neutralize fraud. Our Data and Analytics solutions include Data Strategy, Data Governance, Data Engineering, Visual Analytics, Data Science and Chief Data & Analytics Officer Advisory Services.
+                  </p>
+               </div>
+            </div>
+            <!-- end about-desc -->
+         </div>
+
+         <div class="container">
+            <div class="row">
+               <div class="about-process process block-1-2 block-tab-full">
+                  <div class="process__vline-left"></div>
+                  <div class="process__vline-right"></div>
+                  <div class="col-block process__col"  data-aos="fade-up">
+                     <div class="process__text">
+                        <h4 class="text-color" style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/datastrategy.png"></span><b>Data Strategy</b></h4>
+                        </br>
+                        <p class="lead text-color" style="color: white">
+                           We analyze, develop vision and create a data strategy, through roadmaps, stakeholder management, and implementation planning and execution to deliver your business and mission objectives.
+                        </p>
+                     </div>
+                  </div>
+                  <div class="col-block process__col"  data-aos="fade-up">
+                     <div class="process__text">
+                        <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/datagovernance.png"></span><b>Data Governance</b></h4>
+                        </br>
+                        <p class="lead" style="color: white">
+                           Our Data governance solutions enable our federal customers to define clear ownership, be compliant with business rules, meet operational capabilities, seamless stakeholder interactions and facilitate easy decision-making processes.
+
+                        </p>
+                     </div>
+                  </div>
+                  <div class="col-block process__col"  data-aos="fade-up">
+                     <div class="process__text">
+                        <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/datascience.png"></span><b>Data Science</b></h4>
+                        </br>
+                        <p class="lead" style="color: white">
+                           We extract knowledge and explore insights from your structured and unstructured data and provide meaningful predictive patterns and insights derived from your data.  Our experience includes applying statistical and predictive models and machine learning algorithms to generate business insight, such as:
+                        <ul class="no-margin" style="padding-left: 30px">
+                           <li style="color: red"><p class="lead" style="color: white">Anomaly detection to detect tax payer fraud </p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Insider and Outside Cyber Threat Analysis</p></li>
+                           <li style="color: red"><p class="lead" style="color: white">NLP (Natural Language Processing) for IT Help desk, HR and Procurement organizations</p></li>
+                        </ul>
+                        </p>
+                     </div>
+
+                  </div>
+                  <div class="col-block process__col"  data-aos="fade-up">
+                     <div class="process__text">
+                        <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/visualanalytics.png"></span><b>Visual Analytics</b></h4>
+                        </br>
+                        <p class="lead" style="color: white">
+                           We help building both Enterprise Analytics as well as Self-service data discovery platforms (Tableau, PowerBI) for Enterprise users as well as business users. Our experience includes
+                        <ul class="no-margin" style="padding-left: 30px">
+                           <li style="color: red"><p class="lead" style="color: white">Architect, Build and Maintain Business Intelligence and Visualization Centers of Excellence (CoEs)</p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Building dashboards and reports</p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Tools Bake off</p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Section 508 Testing</p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Brownbag sessions</p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Training</p></li>
+                        </ul>
+                        </p>
+                     </div>
+                  </div>
+                  <div class="col-block process__col"  data-aos="fade-up">
+                      <div class="process__text">
+                        <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/dataengineering.png"></span><b>Data Engineering</b></h4>
+                        </br>
+                        <p class="lead" style="color: white">
+                           We design and build distributed, scalable and reliable data infrastructure which includes
+                       <ul class="no-margin" style="padding-left: 30px">
+                           <li style="color: red"><p class="lead" style="color: white"> Data lakes, Data warehouses, Data marts</p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Extract Transform Load /Extract Load Transform</p> </li>
+                           <li style="color: red"><p class="lead" style="color: white">Data and Analytics Center of Excellence </p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Access control policies</p></li>
+                            <li style="color: red"><p class="lead" style="color: white">Proof of Values, Tool selection and Best practices</p></li>
+                        </ul>
+                        </p>
+                     </div>
+                  </div>
+                  <div class="col-block process__col"  data-aos="fade-up">
+                     <div class="process__text">
+                        <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/dataadvisoryservices.png"></span><b>Data Advisory Services</b></h4>
+                        </br>
+                        <p class="lead" style="color: white;">
+                           Our advisory services assist the Chief Data & Analytics Officer in building partnerships with both internal and external customers for greater and more focused insights. We help in defining, fostering and embedding a culture of data and analytics, insight-based decision making whilst effectively safeguarding citizen data and breaking down silos. Our solutions:
+                        <ul class="no-margin" style="padding-left: 30px">
+                           <li style="color: red"><p class="lead" style="color: white">Drive AI/ML adoption<p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Embrace cloud native data solutions<p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Enable self-service data analytics</p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Ensure a clean data lineage</p></li>
+                           <li style="color: red"><p class="lead" style="color: white">Compliant with latest legislative and cyber mandates</p></li>
+                        </ul>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <!-- end process -->
+            </div>
+            <!-- end about-stats -->
+         </div>
+         <span class="anchor" id="iaspan"></span>
+         <section id="ia" class="s-about backgroundclass" style="padding-bottom: 2rem;">
+            <div class="container">
+               <div class="row section-header" data-aos="fade-up">
+                  <div class="col-full">
+                     <h1 class="display-1"style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/intelligentautomation.png"></span>Intelligent Automation</h1>
+                  </div>
+               </div>
+               <!-- end section-header -->
+            </div>
+            <div class="container">
+               <div class="row" data-aos="fade-up">
+                  <div class="col-full">
+                     <p class="lead" style="color: white">
+                        We empower the human creativity with our scalable Intelligent Automation (IA) solutions that assist federal agencies achieve higher levels of productivity, efficiency and compliance and cost reduction. We achieve this by creating solutions in the fields of Robotic Process Automation (RPA), Machine learning (ML) and Artificial Intelligence (AI). Our IA solutions enable process orchestration to make smarter decisions and achieve end-to-end AI-Driven Process Automation.
+                     </p>
+                  </div>
+               </div>
+               <!-- end about-desc -->
+            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="about-process process block-1-2 block-tab-full">
+                     <div class="process__vline-left"></div>
+                     <div class="process__vline-right"></div>
+                     <div class="col-block process__col" data-item="1" data-aos="fade-up">
+                        <div class="process__text">
+                           <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/rpa.png"></span><b>Robotic Process Automation</b></h4>
+                           </br>
+                           <p class="lead" style="color: white">
+                              Robotic Process Automation (RPA) is a software technology solution for the automation of business processes. RPA allows federal agencies to automate manual, repetitive and rules-based business processes in a non-intrusive way by leveraging the existing infrastructure of underlying systems (without any “rip and replacement”).An RPA automation solution provides your agency with the following benefits.
+                           </p>
+                           <ul class="no-margin" style="padding-left: 30px">
+                              <li style="color: red"><p class="lead" style="color: white">Eliminates manual processes </p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Decreases costs</p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Raises productivity</p> </li>
+                              <li style="color: red"><p class="lead" style="color: white">Increases quality by reducing error rates</p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Improves compliance</p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Raises employee satisfaction</p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Attract new talent (by positioning it as a cool workplace)</p></li>
+                           </ul>
+                           <p class="lead" style="color: white">
+                              Our RPA framework includes:
+                           </p>
+                           <ul class="no-margin" style="padding-left: 30px">
+                            <li style="color: red"><p class="lead" style="color: white">Robotic Operations Center(ROC)</p> </li>
+                              <li style="color: red"><p class="lead" style="color: white">Bot as a Service(BaaS)</p> </li>
+                              <li style="color: red"><p class="lead" style="color: white">Managed Service(On Prem, Hybrid, Gov Cloud)</p> </li>
+                              <li style="color: red"><p class="lead" style="color: white">Domain specific assessment artifacts (eg: Procurement or IT Help desk) </p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Reusable Components</p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Accelerators</p> </li>
+
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-block process__col" data-item="2" data-aos="fade-up">
+                        <div class="process__text">
+                           <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/ml.png"></span><b>Machine Learning</b></h4>
+                           </br>
+                           <p class="lead" style="color: white">
+                              Federal agencies are awash with data. Machine learning (ML) applies statistical techniques to these large data sets by looking for patterns and then generates an implementation code (called Model) that lets agencies recognize those patterns.
+                           </p>
+                           <ul class="no-margin" style="padding-left: 30px">
+                              <li style="color: red"><p class="lead" style="color: white">Our ML solutions include an iterative software development and model management. We have deep expertise in configuring and provisioning environments for training and serving machine learning models.</p> </li>
+                              <li style="color: red"><p class="lead" style="color: white">Our ML models can be deployed using Command Line Interface (CLI) or Software Development Kits (SDK). DevOps teams can integrate the CLI to automation while developers consume the SDK from IDEs such as Jupyter Notebooks, VS Code, or PyCharm.</p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Our ML solutions are built using enterprise automated machine learning platforms such as Azure ML Studio, Data Robot and H2O.Ai as well as custom development using SAS, Python, R or Jupyter.</p> </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-block process__col" data-item="3" data-aos="fade-up">
+                        <div class="process__text">
+                           <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/ai.png"></span><b>Artificial Intelligence (AI)</b></h4>
+                           </br>
+                           <p class="lead" style="color: white">
+                              Federal agencies missions which include citizen-facing roles like health and social services, border services, revenue, pensions, and social security, Artificial Intelligence (AI) can really boost the citizen satisfaction and help scale the needs with reduced costs and greater efficiency. Anika Systems AI solutions deliver value at scale by setting up an automation ecosystem, bringing in operational excellence and implementing use cases. Our AI solutions include
+                           </p>
+                           <ul class="no-margin" style="padding-left: 30px">
+                              <li style="color: red"><p class="lead" style="color: white">AI maturity assessment</p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Center of Excellence(CoE) setup</p> </li>
+                              <li style="color: red"><p class="lead" style="color: white">Use case discovery</p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Cognitive Solutions like Sentiment Analysis, Image Analytics and Speech Recognition</p></li>
+                              <li style="color: red"><p class="lead" style="color: white">Building Chabot frameworks</p></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- end process -->
+               </div>
+               <!-- end about-stats -->
+            </div>
+         </section>
+         <span class="anchor" id="apdspan"></span>
+            <section id="ad" class="s-about backgroundclass">
+            <div class="container">
+               <div class="row section-header" data-aos="fade-up">
+                  <div class="col-full">
+                     <h1 class="display-1" style="color:white"><span class=" services-icon"><img class="responsive" src="iconset/applicationdev.png"></span>Application Development</h1>
+                  </div>
+               </div>
+               <!-- end section-header -->
+            </div>
+            <div class="container">
+               <div class="row" data-aos="fade-up">
+                  <div class="col-full">
+                     <p class="lead" style="color: white">
+                        We practice Design Thinking to accelerate application development lifecycle which helps our customers achieve Agile and DevSecOps adoption through ideation, quick prototypes, rapid iterations enabling faster operationalization of solutions.
+                     </p>
+                  </div>
+               </div>
+               <!-- end about-desc -->
+            </div>
+            <div class="container">
+               <div class="row">
+                  <div class="about-process process block-1-2 block-tab-full">
+                     <div class="process__vline-left"></div>
+                     <div class="process__vline-right"></div>
+                     <div class="col-block process__col" data-item="1" data-aos="fade-up">
+                        <div class="process__text">
+                           <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/Agile.png"></span><b>Agile</b></h4>
+                           </br>
+                           <p class="lead" style="color: white">
+                              We tailor our custom Agile Framework to each agency specific ELC methodologies by leveraging Scrum or/and Kanban methodologies and deliver new features in two-week sprint and release cycles. We use small, agile, focused sprint teams that work closely with business owners in two-week sprint and release cycles. With this approach, we get working software into users’ hands early-on in the process so that design and development teams can adjust based on feedback.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="col-block process__col" data-item="2" data-aos="fade-up">
+                        <div class="process__text">
+                           <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/DevSecOps.png"></span><b>DevSecOps</b></h4>
+                           </br>
+                           <p class="lead" style="color: white">
+                              Our DevSecOps (a blend of ‘development, security and ‘operations’) approach introduces a collaborative working style in the development, cyber security and operations teams, leading to rapid and Continuous Integration & Continuous Delivery (CI/CD) of “security as code” software deployments. Security vulnerability scans, ARS3.1 and FISMA controls are baked in every development cycle.
+
+                           </p>
+                        </div>
+                     </div>
+                     <div class="col-block process__col" data-item="3" data-aos="fade-up">
+                        <div class="process__text">
+                           <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/Microservices_API.png"></span><b>Microservices and APIs</b></h4>
+                           </br>
+                           <p class="lead" style="color: white">
+                              We design our software by adhering to microservice based architecture wherein all components are separate microservices and integrated via REST API mesh. With this approach, each microservice can be independently tested modified and enhanced without affect any other component.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="col-block process__col" data-item="4" data-aos="fade-up">
+                        <div class="process__text">
+                           <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/infrastructureascode.png"></span><b>Infrastructure as Code</b></h4>
+                           </br>
+                           <p class="lead" style="color: white">
+                              We incorporated Infrastructure as Code (IaC) as core tenet of our application development best practice. IaC enables DevSecOps teams to test applications in production-like environments early in the development cycle and prevent common deployment issues. IaC enforces consistency via code and prevent runtime issues caused by configuration drift or missing dependencies. By implementing IaC we deliver stable environments rapidly and at scale and avoid manual configuration of environments.
+                        </div>
+                     </div>
+                  </div>
+                  <!-- end process -->
+               </div>
+               <!-- end about-stats -->
+            </div>
+         </section>
+          <span class="anchor" id="emspan"></span>
+         <section id="em" class="s-about backgroundclass">
+            <div class="container">
+               <div class="row section-header" data-aos="fade-up">
+                  <div class="col-full">
+                     <h1 class="display-1" style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/em.png"></span>Enterprise IT Modernization</h1>
+                  </div>
+               </div>
+               <!-- end section-header -->
+            </div>
+            <div class="container">
+               <div class="row" data-aos="fade-up">
+                  <div class="col-full">
+                     <p class="lead" style="color: white">
+                        In our view any application that impedes business process change is considered a Legacy application. These legacy applications may run on mainframe environments or on a deprecated software platform that the vendor has stopped supporting. Outdated legacy environments hinder progress, burden agencies with high maintenance costs and impede the ability to attract employees with necessary skill sets. We assist your agency in building a lean, robust and future-forward IT asset portfolio designed to migrate from the existing applications, reduce operating expenses and produce tangible business outcomes. We classify IT Modernization into the following areas:
+                     </p>
+                     <ul class="no-margin" style="padding-left: 30px">
+                        <li style="color: red"><p class="lead" style="color: white">Cloud Solutions (Private Cloud, Hybrid Cloud and Gov Cloud)</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Application Modernization (Legacy Code Conversion, DevSecOps/DataOps using Agile/Kanban Frameworks)</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Infrastructure Modernization (SDN, Hyperconverged Infrastructure)</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Digital Transformation (Low code Platforms, Intelligent intranets, Desktop as a Service, Mobility)</p></li>
+                     </ul>
+                     </br>
+                     <p class="lead" style="color: white">Our Approach to Enterprise Modernization involves</p>
+                     <div class="container">
+                        <div class="row">
+                           <div class="about-process process block-1-2 block-tab-full">
+                              <div class="process__vline-left"></div>
+                              <div class="process__vline-right"></div>
+                              <div class="col-block process__col" data-item="1" data-aos="fade-up">
+                                 <div class="process__text">
+                                    <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/businessprocess.png"></span><b>Business Process Modernization</b></h4>
+                                    </br>
+                                    <ul class="no-margin" style="padding-left: 30px">
+                                       <li style="color: red"><p class="lead" style="color: white">Plan -  Identify Business Processes</p> </li>
+                                       <li style="color: red"><p class="lead" style="color: white">Transform - Streamline and Enhance</p></li>
+                                       <li style="color: red"><p class="lead" style="color: white">Implement - Validate and Rollout</p></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-block process__col" data-item="2" data-aos="fade-up">
+                                 <div class="process__text">
+                                    <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/infrastructuremodernization.png"></span><b>Application and Infrastructure Modernization </b></h4>
+                                    </br>
+                                    <ul class="no-margin" style="padding-left: 30px">
+                                       <li style="color: red"><p class="lead" style="color: white">Plan -  Analyzing Legacy Code, software and hardware</p> </li>
+                                       <li style="color: red"><p class="lead" style="color: white">Transform - Application and Infrastructure Architecture</p></li>
+                                       <li style="color: red"><p class="lead" style="color: white">Implement - Writing and Delivering Quality Software to convert from COBOL/ALC to Java/.Net or other Modern Languages. Consolidation and upgrade of legacy infrastructure. Integration with cloud, mobile and web services </p> </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- end process -->
+                        </div>
+                        <!-- end about-stats -->
+                     </div>
+                  </div>
+               </div>
+               <!-- end about-desc -->
+            </div>
+         </section>
+
+          <span class="anchor" id="csspan"></span>
+         <section id="cs" class="s-about backgroundclass">
+            <div class="container">
+               <div class="row section-header" data-aos="fade-up">
+                  <div class="col-full">
+                     <h1 class="display-1" style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/cloudengineering.png"></span>Cloud Engineering</h1>
+                  </div>
+               </div>
+               <!-- end section-header -->
+            </div>
+            <div class="container">
+               <div class="row" data-aos="fade-up">
+                  <div class="col-full">
+                     <p class="lead" style="color: white">
+                        Cloud Transformation continues to be one of the major investment priorities for federal agencies and effective strategy can bring agility, instant scalability and operational simplicity across the organization.
+
+                     </p>
+                     <p class="lead" style="color: white">We help federal agencies develop complete cloud strategy allowing businesses to do seamless migration of their applications and eliminating uncertainty. We work with your IT and Business Divisions to assess the following areas:
+                     <ul class="no-margin" style="padding-left: 30px">
+                         <li style="color: red"><p class="lead" style="color: white">Agencies’ readiness</p></li>
+                         <li style="color: red"><p class="lead" style="color: white">Current Architecture and Target State Architecture</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Gov Cloud vs. Private Cloud vs. Hybrid evaluations</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Risk and impact analysis</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Timelines, process, tools, resources and budget</p></li>
+                     </ul>
+                     </p>
+                     <br>
+                     <p class="lead" style="color: white">Our Approach to Cloud Engineering involves</p>
+                     <div class="container">
+                        <div class="row">
+                           <div class="about-process process block-1-2 block-tab-full">
+                              <div class="process__vline-left"></div>
+                              <div class="process__vline-right"></div>
+                              <div class="col-block process__col" data-item="1" data-aos="fade-up">
+                                 <div class="process__text">
+                                    <h4 style="color: white"><span class="services-icon"><img class="responsive" src="iconset/Discover.png"></span><b>Discover</b></h4>
+                                    </br>
+                                    <ul class="no-margin" style="padding-left: 30px">
+                                       <li style="color: red"><p class="lead" style="color: white">Identify Key drivers</p> </li>
+                                       <li style="color: red"><p class="lead" style="color: white">Assess application inventory</p></li>
+                                       <li style="color: red"><p class="lead" style="color: white">Capture data</p></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-block process__col" data-item="1" data-aos="fade-up">
+                                 <div class="process__text">
+                                    <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/Assess.png"></span><b>Assess</b></h4>
+                                    </br>
+                                    <ul class="no-margin" style="padding-left: 30px">
+                                       <li style="color: red"><p class="lead" style="color: white">Establish framework</p> </li>
+                                       <li style="color: red"><p class="lead" style="color: white">Indentify services</p></li>
+                                       <li style="color: red"><p class="lead" style="color: white">Finalize vendor platforms and architecture</p></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-block process__col" data-item="1" data-aos="fade-up">
+                                 <div class="process__text">
+                                    <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/Plan.png"></span><b>Plan</b></h4>
+                                    </br>
+                                    <ul class="no-margin" style="padding-left: 30px">
+                                       <li style="color: red"><p class="lead" style="color: white">Plan, estimate, prioritize</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Define roadmap</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Pilot with business case</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Define future architecture</p></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                              <div class="col-block process__col" data-item="1" data-aos="fade-up">
+                                 <div class="process__text">
+                                    <h4 style="color: white"><span class=" services-icon"><img class="responsive" src="iconset/Test.png"></span><b>Test</b></h4>
+                                    </br>
+                                    <ul class="no-margin" style="padding-left: 30px">
+                        <li style="color: red"><p class="lead" style="color: white">Remediate/Migrate Apps</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Document code change & configurations</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Migrate Database/Apps</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Validate and accept</p></li>
+                     </ul>
+                                 </div>
+                              </div>
+                              <div class="col-block process__col" data-item="1" data-aos="fade-up">
+                                 <div class="process__text">
+                                    <h4 style="color: white"><span class="services-icon"><img class="responsive" src="iconset/Deploy.png"></span><b>Deploy</b></h4>
+                                    </br>
+                                    <ul class="no-margin" style="padding-left: 30px">
+                        <li style="color: red"><p class="lead" style="color: white">Support transition plan</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Implement periodic review plan</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Update catalog</p></li>
+                        <li style="color: red"><p class="lead" style="color: white">Overview monitoring</p></li>
+                     </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- end process -->
+                        </div>
+                        <!-- end about-stats -->
+                     </div>
+                  </div>
+               </div>
+               <!-- end about-desc -->
+            </div>
+         </section>
+      </section>
+
+
+      <!-- services
+         ================================================== -->
+   <span class="anchor" id="techspan"></span>
+ <section id='technology' class="s-about backgroundclass" style="padding-top: 1rem;">
+         <div class="container">
+            <div class="row section-header" data-aos="fade-up">
+               <div class="col-full">
+                  <h3 class="subhead">Partners</h3>
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="circular--landscape">
+                           <img src="images/microsoft.png" />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- end section-header -->
+         </div>
+         <div class="container">
+            <div class="row" data-aos="fade-up">
+               <div class="col-full">
+                  <p class="lead" style="color: white">
+                     Anika Systems has deep working relationship with Microsoft as an Azure Gold Certified Partner which includes building rapid prototypes using multiple open source tools as well as Azure DevOps pipelines, Azure Container Service, Git Enterprise, Azure Cognitive Services, Azure Data Lake, Azure SQL Warehouse, Azure SQL database and Azure Databricks. We host our customer’s solutions in Azure Gov Cloud and host our own infrastructure in Azure Public Cloud.
+                  </p>
+               </div>
+            </div>
+            <!-- end about-desc -->
+         </div>
+         </br>
+         </br>
+         <span class="anchor" id="cloudbees"></span>
+         <div class="container">
+            <div class="row section-header" data-aos="fade-up">
+               <div class="col-full">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="circular--landscape">
+                           <img src="images/cloudbees.png" />
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <!-- end section-header -->
+         </div>
+         <div class="container">
+            <div class="row" data-aos="fade-up">
+               <div class="col-full">
+                  <p class="lead" style="color: white">
+                     Anika Systems has extensive expertise and a proprietary pipeline framework that helps agencies in accelerating their Continuous Integration (CI) initiatives and enable fast track DevSecOps adoption. We developed rich set of best practices that can help accelerate CloudBees Jenkins deployments. We also assist agencies to understand and embrace the platform capabilities including team management, role-based access, monitoring and developer collaboration.
+                  </p>
+               </div>
+            </div>
+            <!-- end about-desc -->
+         </div>
+         </br>
+         </br>
+         <span class="anchor" id="uipath"></span>
+         <div class="container">
+            <div class="row section-header" data-aos="fade-up">
+               <div class="col-full">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="circular--landscape">
+                           <img src="images/uipath.png" />
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <!-- end section-header -->
+         </div>
+         <div class="container">
+            <div class="row" data-aos="fade-up">
+               <div class="col-full">
+                  <p class="lead" style="color: white">
+                     Anika Systems is a Diamond partner of UiPath, the No.1 Robotic Process Automation (RPA) software. We also are a Business Process Outsourcing (BPO) and Premier Federal Services partner of UiPath. We have built extensive set of connectors, accelerators, reference and reusable frameworks and a very scalable server architecture that can be deployed in the customers on-premise, Hybrid Cloud and Gov Cloud environments. We also provide Bot as a Service (BaaS) which is a cloud based UiPath subscription solution allowing federal agencies to lease Robots as needed in order to automate manual and repetitive tasks.
+                  </p>
+               </div>
+            </div>
+            <!-- end about-desc -->
+         </div>
+         </br>
+         </br>
+         <span class="anchor" id="redhat"></span>
+         <div class="container">
+            <div class="row section-header" data-aos="fade-up">
+               <div class="col-full">
+                  <div class="row">
+                     <div class="col-md-3">
+                        <div class="circular--landscape">
+                           <img src="images/redhat.png" />
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <!-- end section-header -->
+         </div>
+         <div class="container">
+            <div class="row" data-aos="fade-up">
+               <div class="col-full">
+                  <p class="lead" style="color: white">
+                     Anika Systems is a RedHat Federal partner with extensive experience in building both infrastructure and application development solutions using RedHat suite of products such as OpenShift, RedHat Linux, JBoss and BRMS.
+                  </p>
+               </div>
+            </div>
+            <!-- end about-desc -->
+         </div>
+         </br>
+         </br>
+         <span class="anchor" id="pg"></span>
+         <div class="container">
+            <div class="row section-header" data-aos="fade-up">
+               <div class="col-full">
+                  <div class="row">
+                     <div class="col-md-3">
+                        <div class="circular--landscape">
+                           <img src="images/pivotalg.png" />
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <!-- end section-header -->
+         </div>
+         <div class="container">
+            <div class="row" data-aos="fade-up">
+               <div class="col-full">
+                  <p class="lead" style="color: white">
+                     Anika Systems has been a Federal Services partner of Pivotal Greenplum for over a decade. We have architected, built and maintained Greenplum Data Computing Appliance (DCA) based large multi-terabyte Massively Parallel Processing (MPP) Data warehouse environments across federal agencies such as IRS and CFTC.
+                  </p>
+               </div>
+            </div>
+            <!-- end about-desc -->
+         </div>
+         </br>
+         </br>
+         <span class="anchor" id="tu"></span>
+         <div class="container">
+            <div class="row section-header" data-aos="fade-up">
+               <div class="col-full">
+                  <div class="row">
+                     <div class="col-md-3">
+                        <div class="circular--landscape">
+                           <img src="images/tu.jpg" />
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+            <!-- end section-header -->
+         </div>
+         <div class="container">
+            <div class="row" data-aos="fade-up">
+               <div class="col-full">
+                  <p class="lead" style="color: white">
+                     Anika Systems has deep expertise in building self-service data discovery analytics using Tableau including building Centers of excellence.
+               </div>
+            </div>
+            <!-- end about-desc -->
+         </div>
+      </section>
+
+      <!-- works
+         ================================================== -->
+<footer class=" footer-padding" style="background-color: white;padding-top: 30px;padding-bottom: 10px">
+         <div class="container">
+            <div class="row mb30">
+               <!-- Logo -->
+               <div class="col-sm-4">
+                  <!-- <span class="icon-handle-streamline-vector logo"></span> -->
+
+                  <p class="no-margin text-switch" style="color: black">
+                     At Anika Systems, we are more than a technology consulting firm. We view our clients as partners and actively collaborate with them to achieve long-term success and make a significant contribution to their mission goals.
+                  </p>
+               </div>
+               <!-- /.column -->
+               <!-- Social -->
+               <div class="col-sm-4 mt30-xs">
+                 <img style="width: 100%;" src="certificates/image1.png" class="img-responsive">
+                 <div class="row">
+                  <div class="col-md-12">
+                 <img style="width: 100%;height:auto;" src="certificates/image2.png" class="img-responsive">
+                 </div>
+                  <div class="col-md-12">
+                 <img style="width: 100%;height:auto;" src="certificates/cmmisvc.png" class="img-responsive">
+                 </div>
+                 </div>
+               </div>
+               <!-- /.column -->
+               <!-- List -->
+
+               <!-- /.column -->
+               <!-- Contact -->
+               <div class="col-sm-4 mt30-xs">
+                  <h5 class="heading-1 mb20" style="color: black"><b>Contact Us</b></h5>
+                <h5 class="mb15" style="color: black"><strong class="text-switch" style="color: black">161 Fort Evans Rd NE,<br> Suite 250,Leesburg VA 20176 </strong></h5>
+                  <h5 class="mb15" style="color: black"><strong class="text-switch" style="color: black">Email: info@anikasystems.com </strong></h5>
+                  <h5 class="mb15" style="color: black"><strong class="text-switch" style="color: black">Phone: +1 703-244-0158</strong></h5>
+                   <ul class="list-inline">
+                     <li><a href="https://www.linkedin.com/company/anika-systems/about/" style="display: block;
+                        background-color: red;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 100%;
+                        font-size: 20px;
+                        text-align: center;
+                        line-height: 40px;
+                        color: white;
+                        outline: none;
+                        margin-bottom: 15px;
+                        -webkit-transition: all 0.4s;
+                        -moz-transition: all 0.4s;
+                        transition: all 0.4s;"><i class="fab fa-linkedin"></i></a></li>
+                     <li><a href="https://medium.com/@anikasystemsinc" style="display: block;
+                        background-color: red;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 100%;
+                        font-size: 20px;
+                        text-align: center;
+                        line-height: 40px;
+                        color: white;
+                        outline: none;
+                        margin-bottom: 15px;
+                        -webkit-transition: all 0.4s;
+                        -moz-transition: all 0.4s;
+                        transition: all 0.4s;"><i class="fab fa-medium"></i></a></li>
+                     <li><a href="https://twitter.com/anikasystemsinc" style="display: block;
+                        background-color: red;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 100%;
+                        font-size: 20px;
+                        text-align: center;
+                        line-height: 40px;
+                        color: white;
+                        outline: none;
+                        margin-bottom: 15px;
+                        -webkit-transition: all 0.4s;
+                        -moz-transition: all 0.4s;
+                        transition: all 0.4s;"><i class="fab fa-twitter"></i></a></li>
+                  </ul>
+               </div>
+               <!-- /.column -->
+            </div>
+            <div class="row">
+               <div class="col-sm-12 text-center">
+                  <h5 class="mb15" style="color: black"><strong class="text-switch" style="color: black;margin-bottom: 10px!important;">© 2021 Anika Systems</strong></h5>
+                <h5 class="mb15" style="color: black;line-height: 0;"><strong class="text-switch" style="color: black">All Rights Reserved</strong></h5>
+               </div>
+               <!-- /.column -->
+            </div>
+            <!-- /.row -->
+         </div>
+         <!-- /.container -->
+      </footer>
+      <!-- <script type="text/javascript">
+          $('.nav a').on('click', function(){
+            $(".btn-navbar").click(); //bootstrap 2.x
+            $(".navbar-toggle").click(); //bootstrap 3.x by Richard
+            this.forceUpdate({});
+        });
+      </script> -->
+      <script src="js/jquery-3.2.1.min.js"></script>
+      <script src="js/plugins.js"></script>
+      <script src="js/main2.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+      <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function () {
+  $(".navbar-nav li li li a").click(function(event) {
+
+    $( "#main-menu-state" ).prop( "checked", false );
+    $(".navbar-collapse").collapse('hide');
+  });
+});
+      </script>
+   </body>
+</html>
