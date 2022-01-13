@@ -9,8 +9,6 @@ using SendGrid.Helpers.Mail;
 
 public static SendGridMessage Run(Contact req, ICollector<Contact> tableBinding, ILogger log)
 {
-    //string jsonContent = await req.Content.ReadAsStringAsync();
-    //dynamic data = JsonConvert.DeserializeObject(jsonContent); a
     // add Contact object to tableBinding. This will insert all of the Contact Form fields into azure tables
     tableBinding.Add(
         new Contact() { 
