@@ -8,7 +8,7 @@ Pre-Deployment Steps:
 - Create Table within Azure Storage Account (Take note of the Table name)
 
 Deployment Steps: 
-- az deployment group create --resource-group CorpSite-Static-POC-RG --template-file template.bicep
+- az deployment group create --resource-group <RESOURCEGROUP> --template-file LogicAppDeploy.bicep
 - Provide params storageAccount &  storageAccountTableName
 
 Final Step Post Deployment: 
