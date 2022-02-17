@@ -1,4 +1,3 @@
-// Notes: requires a storage account & table be created and provided as input. see line 122
 param logicAppName string = 'ContactForm'
 param storageAccount string
 param storageAccountTableName string
