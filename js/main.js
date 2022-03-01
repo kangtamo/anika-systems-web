@@ -28,7 +28,7 @@ function submitForm() {
     // Initiate Variables With Form Content
     $.ajax({
         type: "POST",
-        url: window.location.origin+"/api/contact",
+        url: "",
         data : JSON.stringify($("#contactForm").serializeArray()),
         contentType : 'application/json',
         crossDomain: true,
