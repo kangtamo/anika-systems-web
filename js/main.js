@@ -28,7 +28,7 @@ function submitForm() {
     // Initiate Variables With Form Content
     $.ajax({
         type: "POST",
-        url: "",
+        url: "https://prod-80.eastus.logic.azure.com:443/workflows/ebd331d75b58486b8a631e50770395cd/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=VyNdiZZTc15fqtU0p-iUDKfurYmwQ5Tf0Y4Ccyyb6p4",
         data : JSON.stringify($("#contactForm").serializeArray()),
         contentType : 'application/json',
         crossDomain: true,
