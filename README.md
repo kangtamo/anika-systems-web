@@ -1,20 +1,15 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# CDN Distributed Static Website Deployment:
+This service catalog offering builds out a basic website hosted in a Storage Account behind a CDN Endpoint.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Prerequisites: 
+- Have the entire VDC deployed in either the 1 or 3 subscription testing approach
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Deployment Command: 
+***az deployment sub create --location eastus --template-file service-catalog/StaticWebsite/CDNStaticWebsite.bicep***
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Post Deployment: 
+Navigate to the resource group created in the Azure portal. Select the CDN endpoint resource. You then can select the origin URL or the CDN URL to view the default website created by the service catalog 
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+If you have website front-end code readily available, you can batch upload files to your new static website configuration using the following command:
+
+***az storage blob upload-batch --source LOCAL_WEBSITE_FILES --destination https://STORAGE_NAME.blob.core.windows.net/$web --account-name NAME_HERE --account-key KEY_HERE***
