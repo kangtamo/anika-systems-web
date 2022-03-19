@@ -12,7 +12,7 @@ pool:
 steps:
 - task: AzureCLI@2
   inputs:
-    azureSubscription: 'FCF-hub-test-connection' # need new connection (proj setting)
+    azureSubscription: 'Static-Web-Connection' # need new connection (proj setting)
     scriptType: bash
     scriptLocation: inlineScript
     inlineScript: |
