@@ -16,6 +16,6 @@ steps:
     scriptType: bash
     scriptLocation: inlineScript
     inlineScript: |
-      az deployment sub create --location eastus --template-file Static-Web-Infrastructure/CDNStaticWebsite.bicep
+      az deployment sub create --location eastus --template-file Static-Web-Infrastructure/CDNStaticWebsite.bicep --parameters projectName=$(projectName) environment=$(environment)
 # I have added the 3 subscription IDs as parameters to this deployment, you can find / modify their values in the variables tab - Raymond
 # Old Command - az deployment sub create --name $(DeploymentName) --location $(Region) --template-file $(templateFile) --parameters gssSubscriptionId=$(gssSubID) hubSubscriptionId=$(hubSubID) landingZoneSubscriptionId=$(lzSubID)
