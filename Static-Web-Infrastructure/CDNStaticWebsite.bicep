@@ -16,7 +16,7 @@ resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   location: location
 }
 
-module StaticWeb '../../modules/storageAccStaticWebsite.bicep' = {
+module StaticWeb './storageAccStaticWebsite.bicep' = {
   name: 'staticWebsite'
   scope: resourceGroup
   params: {
@@ -26,7 +26,7 @@ module StaticWeb '../../modules/storageAccStaticWebsite.bicep' = {
   }
 }
 
-module CDNProfile '../../modules/CDNProfile.bicep' = {
+module CDNProfile './CDNProfile.bicep' = {
   name: 'CDNProfile'
   scope: resourceGroup
   params: {
@@ -35,7 +35,7 @@ module CDNProfile '../../modules/CDNProfile.bicep' = {
   }
 }
 
-module CDNEndpointStaticWeb '../../modules/CDNEndpointStaticWeb.bicep' = {
+module CDNEndpointStaticWeb './CDNEndpointStaticWeb.bicep' = {
   name: 'CDNEndpointStaticWeb'
   scope: resourceGroup
   params: {
