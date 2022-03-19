@@ -26,6 +26,7 @@ steps:
     templateLocation: 'Linked artifact'
     csmFile: './Static-Web-Infrastructure/CDNStaticWebsite.bicep'
     deploymentMode: 'Incremental'
+    deploymentOutputs: 
 
 
 # I have added the 3 subscription IDs as parameters to this deployment, you can find / modify their values in the variables tab - Raymond
