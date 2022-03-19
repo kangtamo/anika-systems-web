@@ -22,7 +22,6 @@ module StaticWeb './storageAccStaticWebsite.bicep' = {
   params: {
     storageAccountName: storageAccountName
     location: location
-
   }
 }
 
@@ -47,3 +46,5 @@ module CDNEndpointStaticWeb './CDNEndpointStaticWeb.bicep' = {
     CDNProfile
   ]
 }
+
+output storageAccountName string = storageAccountName
