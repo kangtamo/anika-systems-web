@@ -10,12 +10,31 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: AzureCLI@2
+#- task: AzureCLI@2
+#  inputs:
+#    azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
+#    scriptType: bash
+#    scriptLocation: inlineScript
+#    inlineScript: |
+#      az deployment sub create --location eastus --template-file Static-Web-Infrastructure/CDNStaticWebsite.bicep --parameters projectName=$(projectName) environment=$(environment)
+- task: AzureResourceManagerTemplateDeployment@3
   inputs:
-    azureSubscription: 'FCF-hub-test-connection' # need new connection (proj setting)
-    scriptType: bash
-    scriptLocation: inlineScript
-    inlineScript: |
-      az deployment sub create --location eastus --template-file Static-Web-Infrastructure/CDNStaticWebsite.bicep
+    deploymentScope: 'Subscription'
+    azureResourceManagerConnection: 'Static-Web-Connection'
+    subscriptionId: '28e62442-8bc7-4e32-8792-7b6f570861ba'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    csmFile: './Static-Web-Infrastructure/CDNStaticWebsite.bicep'
+    deploymentMode: 'Incremental'
+
+
 # I have added the 3 subscription IDs as parameters to this deployment, you can find / modify their values in the variables tab - Raymond
 # Old Command - az deployment sub create --name $(DeploymentName) --location $(Region) --template-file $(templateFile) --parameters gssSubscriptionId=$(gssSubID) hubSubscriptionId=$(hubSubID) landingZoneSubscriptionId=$(lzSubID)
+# - task: AzureFileCopy@4
+#  inputs: 
+#   sourcePath: './*'
+#   azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
+#   destination: azureBlob
+#   storage: storage name 
+#   containerName: $web
+   

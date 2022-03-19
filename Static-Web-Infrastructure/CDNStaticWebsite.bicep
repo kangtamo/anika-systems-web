@@ -1,7 +1,7 @@
 targetScope = 'subscription'
 
-param projectName string
-param environment string 
+param projectName string = 'default'
+param environment string = 'test'
 param location string = deployment().location
 param uniqueId string = uniqueString(utcNow())
 param resourcePrefix string = toLower('${projectName}${environment}')
