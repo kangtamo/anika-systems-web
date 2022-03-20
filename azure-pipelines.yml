@@ -25,7 +25,7 @@ steps:
     location: 'East US'
     templateLocation: 'Linked artifact'
     csmFile: './Static-Web-Infrastructure/CDNStaticWebsite.bicep'
-    overrideParameters: 
+    overrideParameters: -projectName $(projectName) -environment $(environment)
     deploymentMode: 'Incremental'
     deploymentOutputs: 'storageAccName'
 
