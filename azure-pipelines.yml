@@ -29,14 +29,11 @@ steps:
     deploymentMode: 'Incremental'
     deploymentOutputs: 'storageAccName'
 
-
-# I have added the 3 subscription IDs as parameters to this deployment, you can find / modify their values in the variables tab - Raymond
-# Old Command - az deployment sub create --name $(DeploymentName) --location $(Region) --template-file $(templateFile) --parameters gssSubscriptionId=$(gssSubID) hubSubscriptionId=$(hubSubID) landingZoneSubscriptionId=$(lzSubID)
-# - task: AzureFileCopy@4
-#  inputs: 
-#   sourcePath: './*'
-#   azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
-#   destination: azureBlob
-#   storage: storage name 
-#   containerName: $web
+- task: AzureFileCopy@4
+  inputs: 
+   sourcePath: './*'
+   azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
+   destination: azureBlob
+   storage: 'storageAccName' 
+   containerName: $web
    
