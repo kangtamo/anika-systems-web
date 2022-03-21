@@ -36,21 +36,21 @@ steps:
 #      foreach ($ouput in $outputs.PSObject.Properties) {
 #      Write-Host "##vso[task.setvariable variable=ARMDO_$($output.Name)]$($output.Value.value)"
 #      }
+- task: AzureCLI@2
+  inputs:
+     azureSubscription: 'Static-Web-Connection'
+     scriptType: 'batch'
+     scriptLocation: 'inlineScript'
+     inlineScript: |
+      '#!/bin/bash
+      KEY=$(az storage account keys list -n armOutputVariable.storageAccName.value --query [0].value -o tsv)
+      az storage blob upload-batch --source ./* --destination https://$(armOutputVariable.storageAccName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccName.value) --account-key $KEY'
 
-#- task: AzureCLI@2
-# inputs:
-#    azureSubscription: 'Static-Web-Connection'
-#    scriptType: 'batch'
-#    scriptLocation: 'inlineScript'
-#    inlineScript: |
-#      '#!/bin/bash
-#      az storage blob upload-batch --name $(ARMDO_storageAccName)'
-
-- task: AzureFileCopy@4
-  inputs: 
-    sourcePath: './*'
-    azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
-    destination: azureBlob
-    storage: $(armOutputVariable.storageAccName.value) 
-    containerName: $web
+#- task: AzureFileCopy@4
+#  inputs: 
+#    sourcePath: './*'
+#    azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
+#    destination: azureBlob
+#    storage: $(armOutputVariable.storageAccName.value) 
+#    containerName: $web
    
