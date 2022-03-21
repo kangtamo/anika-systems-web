@@ -36,6 +36,17 @@ steps:
 #      foreach ($ouput in $outputs.PSObject.Properties) {
 #      Write-Host "##vso[task.setvariable variable=ARMDO_$($output.Name)]$($output.Value.value)"
 #      }
+
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 - task: AzureCLI@2
   inputs:
      azureSubscription: 'Static-Web-Connection'
@@ -44,7 +55,7 @@ steps:
      inlineScript: |
       '#!/bin/bash
       KEY=$(az storage account keys list -n armOutputVariable.storageAccName.value --query [0].value -o tsv)
-      az storage blob upload-batch --source ./* --destination https://$(armOutputVariable.storageAccName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccName.value) --account-key $(KEY)'
+      az storage blob upload-batch --source '$(Build.ArtifactStagingDirectory)' --destination https://$(armOutputVariable.storageAccName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccName.value) --account-key $(KEY)'
 
 #- task: AzureFileCopy@4
 #  inputs: 
