@@ -47,6 +47,7 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+    
 - task: AzureCLI@2
   inputs:
      azureSubscription: 'Static-Web-Connection'
