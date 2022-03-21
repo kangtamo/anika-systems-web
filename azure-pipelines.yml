@@ -35,6 +35,7 @@ steps:
       $outputs = ConvertFrom-Json $($env:storageAccName)
       foreach ($ouput in $outputs.PSObject.Properties) {
       Write-Host "##vso[task.setvariable variable=ARMDO__$($output.Name)]$($output.Value.value)"
+      }
 
 - task: AzureFileCopy@4
   inputs: 
