@@ -32,7 +32,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $outputs = ConvertFrom-Json $($env:storageAccName)
+      $outputs = ConvertFrom-Json '$($env:storageAccName)'
       foreach ($ouput in $outputs.PSObject.Properties) {
       Write-Host "##vso[task.setvariable variable=ARMDO_$($output.Name)]$($output.Value.value)"
       }
