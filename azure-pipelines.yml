@@ -27,13 +27,13 @@ steps:
     csmFile: './Static-Web-Infrastructure/CDNStaticWebsite.bicep'
     overrideParameters: -projectName $(projectName) -environment $(environment)
     deploymentMode: 'Incremental'
-    deploymentOutputs: 'storageAccName'
+    deploymentOutputs: storageAccName
 
 - task: AzureFileCopy@4
   inputs: 
    sourcePath: './*'
    azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
    destination: azureBlob
-   storage: 'storageAccName' 
+   storage: storageAccName 
    containerName: $web
    
