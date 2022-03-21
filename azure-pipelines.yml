@@ -34,14 +34,23 @@ steps:
     script: |
       $outputs = ConvertFrom-Json $($env:storageAccName)
       foreach ($ouput in $outputs.PSObject.Properties) {
-      Write-Host "##vso[task.setvariable variable=ARMDO__$($output.Name)]$($output.Value.value)"
+      Write-Host "##vso[task.setvariable variable=ARMDO_$($output.Name)]$($output.Value.value)"
       }
+
+#- task: AzureCLI@2
+# inputs:
+#    azureSubscription: 'Static-Web-Connection'
+#    scriptType: 'batch'
+#    scriptLocation: 'inlineScript'
+#    inlineScript: |
+#      '#!/bin/bash
+#      az storage blob upload-batch --name $(ARMDO_storageAccName)'
 
 - task: AzureFileCopy@4
   inputs: 
-   sourcePath: './*'
-   azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
-   destination: azureBlob
-   storage: $(ARMDO_storageAccName) 
-   containerName: $web
+    sourcePath: './*'
+    azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
+    destination: azureBlob
+    storage: $(ARMDO_storageAccName) 
+    containerName: $web
    
