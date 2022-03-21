@@ -47,15 +47,16 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-#- task: AzureCLI@2
-#  inputs:
-#     azureSubscription: 'Static-Web-Connection'
-#     scriptType: 'bash'
-#     scriptLocation: 'inlineScript'
-#    inlineScript: |
-#      '#!/bin/bash
-#      KEY=$(az storage account keys list -n armOutputVariable.storageAccName.value --query [0].value -o tsv)
-#      az storage blob upload-batch --source '$(Build.ArtifactStagingDirectory)' --destination https://$(armOutputVariable.storageAccName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccName.value) --account-key $(KEY)'
+- task: AzureCLI@2
+  inputs:
+     azureSubscription: 'Static-Web-Connection'
+     scriptType: 'bash'
+     scriptLocation: 'inlineScript'
+     inlineScript: |
+      #!/bin/bash
+      KEY=$(az storage account keys list -n armOutputVariable.storageAccName.value --query [0].value -o tsv)
+
+      az storage blob upload-batch --source $(System.DefaultWorkingDirectory)/drop --destination https://$(armOutputVariable.storageAccName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccName.value) --account-key $(KEY)
 
 #- task: AzureFileCopy@4
 #  inputs: 
