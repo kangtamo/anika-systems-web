@@ -28,14 +28,14 @@ steps:
     overrideParameters: -projectName $(projectName) -environment $(environment)
     deploymentMode: 'Incremental'
     deploymentOutputs: storageAccName
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      $outputs = ConvertFrom-Json '$($env:storageAccName)'
-      foreach ($ouput in $outputs.PSObject.Properties) {
-      Write-Host "##vso[task.setvariable variable=ARMDO_$($output.Name)]$($output.Value.value)"
-      }
+#- task: PowerShell@2
+#  inputs:
+#    targetType: 'inline'
+#    script: |
+#     $outputs = ConvertFrom-Json '$($env:storageAccName)'
+#      foreach ($ouput in $outputs.PSObject.Properties) {
+#      Write-Host "##vso[task.setvariable variable=ARMDO_$($output.Name)]$($output.Value.value)"
+#      }
 
 #- task: AzureCLI@2
 # inputs:
@@ -51,6 +51,6 @@ steps:
     sourcePath: './*'
     azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
     destination: azureBlob
-    storage: $(ARMDO_storageAccName) 
+    storage: $(armOutputVariable.storageAccName.value) 
     containerName: $web
    
