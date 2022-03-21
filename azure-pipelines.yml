@@ -7,7 +7,7 @@ trigger:
 - none
 
 pool:
-  vmImage: windows-latest
+  vmImage: ubuntu-latest
 
 steps:
 #- task: AzureCLI@2
@@ -55,7 +55,7 @@ steps:
      scriptLocation: 'inlineScript'
      inlineScript: |
       #!/bin/bash
-      KEY=$(az storage account keys list -n armOutputVariable.storageAccName.value --query [0].value -o tsv)
+      KEY=$(az storage account keys list -n $(armOutputVariable.storageAccName.value) --query [0].value -o tsv)
 
       az storage blob upload-batch --source $(System.DefaultWorkingDirectory)/drop --destination https://$(armOutputVariable.storageAccName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccName.value) --account-key $(KEY)
 
