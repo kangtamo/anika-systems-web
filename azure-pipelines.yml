@@ -57,7 +57,7 @@ steps:
       #!/bin/bash
       KEY=$(az storage account keys list -g $(armOutputVariable.resourceGroupName.value) -n $(armOutputVariable.storageAccountName.value) --query [0].value -o tsv)
 
-      az storage blob upload-batch --source $(Build.Repository.anikasystems-ui-v1)/* --destination https://$(armOutputVariable.storageAccountName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
+      az storage blob upload-batch --source $(Build.DefaultWorkingDirectory) --destination https://$(armOutputVariable.storageAccountName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
 
 #- task: AzureFileCopy@4
 #  inputs: 
