@@ -64,9 +64,8 @@ steps:
      inlineScript: |
       #!/bin/bash
       KEY=$(az storage account keys list -g $(armOutputVariable.resourceGroupName.value) -n $(armOutputVariable.storageAccountName.value) --query [0].value -o tsv)
-      echo $(Build.ArtifactStagingDirectory)
-      echo $(Build.ArtifactStagingDirectory)\drop
-      echo $(Build.ArtifactStagingDirectory)\drop\*
+      echo $(Pipeline.Workspace)
+      
       az storage blob upload-batch --source $(Build.SourcesDirectory) --destination https://$(armOutputVariable.storageAccountName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
 
 #- task: AzureFileCopy@4
