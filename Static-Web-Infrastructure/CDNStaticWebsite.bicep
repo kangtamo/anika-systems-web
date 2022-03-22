@@ -48,3 +48,4 @@ module CDNEndpointStaticWeb './CDNEndpointStaticWeb.bicep' = {
 }
 
 output storageAccountName string = storageAccountName
+output resourceGroupName string = resourceGroupName
