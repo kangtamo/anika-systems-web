@@ -65,9 +65,9 @@ steps:
       #!/bin/bash
       KEY=$(az storage account keys list -g $(armOutputVariable.resourceGroupName.value) -n $(armOutputVariable.storageAccountName.value) --query [0].value -o tsv)
       
-      echo $(System.DefaultWorkingDirectory)
+      echo '$(Build.ArtifactStagingDirectory)'
       
-      az storage blob upload-batch --source D:\a\1\s\ --pattern * --destination https://$(armOutputVariable.storageAccountName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
+      az storage blob upload-batch --source '$(Build.ArtifactStagingDirectory)' --pattern * --destination https://$(armOutputVariable.storageAccountName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
 
 #- task: AzureFileCopy@4
 #  inputs: 
