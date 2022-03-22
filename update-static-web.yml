@@ -4,16 +4,28 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- none
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+# Copy Repo Files into variable so next task can consume 
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    
+# Batch upload repo (website) files to SA $web container, overwrite any existing files 
+- task: AzureCLI@2
+  inputs:
+     azureSubscription: 'Static-Web-Connection'
+     scriptType: 'bash'
+     scriptLocation: 'inlineScript'
+     inlineScript: |
+      #!/bin/bash
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+      # Dynamically retrieve new SA key 
+      KEY=$(az storage account keys list -g $(resourceGroupName) -n $(storageAccountName) --query [0].value -o tsv)
+      # Batch upload all repo (website) files to new SA $web container
+      az storage blob upload-batch --overwrite=True --source '$(Build.ArtifactStagingDirectory)' --destination '$web' --account-name $(storageAccountName) --account-key $KEY
