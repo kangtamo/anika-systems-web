@@ -25,16 +25,45 @@ steps:
     location: 'East US'
     templateLocation: 'Linked artifact'
     csmFile: './Static-Web-Infrastructure/CDNStaticWebsite.bicep'
+    overrideParameters: -projectName $(projectName) -environment $(environment)
     deploymentMode: 'Incremental'
+    deploymentOutputs: storageAccName
+#- task: PowerShell@2
+#  inputs:
+#    targetType: 'inline'
+#    script: |
+#     $outputs = ConvertFrom-Json '$($env:storageAccName)'
+#      foreach ($ouput in $outputs.PSObject.Properties) {
+#      Write-Host "##vso[task.setvariable variable=ARMDO_$($output.Name)]$($output.Value.value)"
+#      }
 
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-# I have added the 3 subscription IDs as parameters to this deployment, you can find / modify their values in the variables tab - Raymond
-# Old Command - az deployment sub create --name $(DeploymentName) --location $(Region) --template-file $(templateFile) --parameters gssSubscriptionId=$(gssSubID) hubSubscriptionId=$(hubSubID) landingZoneSubscriptionId=$(lzSubID)
-# - task: AzureFileCopy@4
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+    
+- task: AzureCLI@2
+  inputs:
+     azureSubscription: 'Static-Web-Connection'
+     scriptType: 'bash'
+     scriptLocation: 'inlineScript'
+     inlineScript: |
+      #!/bin/bash
+      KEY=$(az storage account keys list -n $(armOutputVariable.storageAccName.value) --query [0].value -o tsv)
+
+      az storage blob upload-batch --source $(System.DefaultWorkingDirectory)/drop --destination https://$(armOutputVariable.storageAccName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccName.value) --account-key $(KEY)
+
+#- task: AzureFileCopy@4
 #  inputs: 
-#   sourcePath: './*'
-#   azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
-#   destination: azureBlob
-#   storage: storage name 
-#   containerName: $web
+#    sourcePath: './*'
+#    azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
+#    destination: azureBlob
+#    storage: $(armOutputVariable.storageAccName.value) 
+#    containerName: $web
    
