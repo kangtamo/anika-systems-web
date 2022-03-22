@@ -67,7 +67,7 @@ steps:
       
       echo '$(Build.ArtifactStagingDirectory)'
       
-      az storage blob upload-batch --source '$(Build.ArtifactStagingDirectory)' --destination '$web' --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
+      az storage blob upload-batch --overwrite=True --source '$(Build.ArtifactStagingDirectory)' --destination '$web' --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
 # --pattern * param flag for command above
 # https://$(armOutputVariable.storageAccountName.value).blob.core.windows.net/ prepend destination-path
 
