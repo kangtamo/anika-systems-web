@@ -10,6 +10,7 @@ pool:
   vmImage: windows-latest
 
 steps:
+#ARM Task to deploy Static Web Infrastructure (SA, CDN, CDN EP)
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Subscription'
@@ -22,11 +23,13 @@ steps:
     deploymentMode: 'Incremental'
     deploymentOutputs: armOutputVariable
 
+# Copy Repo Files into variable so next task can consume 
 - task: CopyFiles@2
   inputs:
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
     
+# Batch upload repo (website) files to SA $web container, overwrite any existing files 
 - task: AzureCLI@2
   inputs:
      azureSubscription: 'Static-Web-Connection'
@@ -34,5 +37,8 @@ steps:
      scriptLocation: 'inlineScript'
      inlineScript: |
       #!/bin/bash
+
+      # Dynamically retrieve new SA key 
       KEY=$(az storage account keys list -g $(armOutputVariable.resourceGroupName.value) -n $(armOutputVariable.storageAccountName.value) --query [0].value -o tsv)
+      # Batch upload all repo (website) files to new SA $web container
       az storage blob upload-batch --overwrite=True --source '$(Build.ArtifactStagingDirectory)' --destination '$web' --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
