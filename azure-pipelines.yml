@@ -67,7 +67,7 @@ steps:
       
       echo $(System.DefaultWorkingDirectory)
       
-      az storage blob upload-batch --source $(System.DefaultWorkingDirectory) --pattern * --destination https://$(armOutputVariable.storageAccountName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
+      az storage blob upload-batch --source D:\a\1\s\ --pattern * --destination https://$(armOutputVariable.storageAccountName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
 
 #- task: AzureFileCopy@4
 #  inputs: 
