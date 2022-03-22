@@ -7,7 +7,7 @@ trigger:
 - none
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 steps:
 #ARM Task to deploy Static Web Infrastructure (SA, CDN, CDN EP)
@@ -41,4 +41,4 @@ steps:
       # Dynamically retrieve new SA key 
       KEY=$(az storage account keys list -g $(armOutputVariable.resourceGroupName.value) -n $(armOutputVariable.storageAccountName.value) --query [0].value -o tsv)
       # Batch upload all repo (website) files to new SA $web container
-      az storage blob upload-batch --overwrite true --source '$(Build.ArtifactStagingDirectory)' --destination '$web' --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
+      az storage blob upload-batch --overwrite=True --source '$(Build.ArtifactStagingDirectory)' --destination '$web' --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
