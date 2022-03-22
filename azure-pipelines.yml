@@ -10,13 +10,6 @@ pool:
   vmImage: windows-latest
 
 steps:
-#- task: AzureCLI@2
-#  inputs:
-#    azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
-#    scriptType: bash
-#    scriptLocation: inlineScript
-#    inlineScript: |
-#      az deployment sub create --location eastus --template-file Static-Web-Infrastructure/CDNStaticWebsite.bicep --parameters projectName=$(projectName) environment=$(environment)
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Subscription'
@@ -28,34 +21,12 @@ steps:
     overrideParameters: -projectName $(projectName) -environment $(environment)
     deploymentMode: 'Incremental'
     deploymentOutputs: armOutputVariable
-#- task: PowerShell@2
-#  inputs:
-#    targetType: 'inline'
-#    script: |
-#     $outputs = ConvertFrom-Json '$($env:storageAccName)'
-#      foreach ($ouput in $outputs.PSObject.Properties) {
-#      Write-Host "##vso[task.setvariable variable=ARMDO_$($output.Name)]$($output.Value.value)"
-#      }
 
 - task: CopyFiles@2
   inputs:
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
     
-#- task: AzureFileCopy@4
-#  inputs:
-#    SourcePath: 'Build.Repository.LocalPath'
-#    azureSubscription: 'Static-Web-Connection'
-#    Destination: 'AzureBlob'
-#    storage: '$(armOutputVariable.storageAccountName.value)'
-#    ContainerName: '$web'
-
 - task: AzureCLI@2
   inputs:
      azureSubscription: 'Static-Web-Connection'
@@ -64,18 +35,4 @@ steps:
      inlineScript: |
       #!/bin/bash
       KEY=$(az storage account keys list -g $(armOutputVariable.resourceGroupName.value) -n $(armOutputVariable.storageAccountName.value) --query [0].value -o tsv)
-      
-      echo '$(Build.ArtifactStagingDirectory)'
-      
       az storage blob upload-batch --overwrite=True --source '$(Build.ArtifactStagingDirectory)' --destination '$web' --account-name $(armOutputVariable.storageAccountName.value) --account-key $KEY
-# --pattern * param flag for command above
-# https://$(armOutputVariable.storageAccountName.value).blob.core.windows.net/ prepend destination-path
-
-#- task: AzureFileCopy@4
-#  inputs: 
-#    sourcePath: './*'
-#    azureSubscription: 'Static-Web-Connection' # (Connection set for Ray's Sub)
-#    destination: azureBlob
-#    storage: $(armOutputVariable.storageAccName.value) 
-#    containerName: $web
-   
