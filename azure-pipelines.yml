@@ -27,7 +27,7 @@ steps:
     csmFile: './Static-Web-Infrastructure/CDNStaticWebsite.bicep'
     overrideParameters: -projectName $(projectName) -environment $(environment)
     deploymentMode: 'Incremental'
-    deploymentOutputs: storageAccName
+    deploymentOutputs: armOutputVariable
 #- task: PowerShell@2
 #  inputs:
 #    targetType: 'inline'
@@ -55,9 +55,9 @@ steps:
      scriptLocation: 'inlineScript'
      inlineScript: |
       #!/bin/bash
-      KEY=$(az storage account keys list -n $(armOutputVariable.storageAccName.value) --query [0].value -o tsv)
+      KEY=$(az storage account keys list -g $(armOutputVariable.resourceGroupName.value) -n $(armOutputVariable.storageAccountName.value) --query [0].value -o tsv)
 
-      az storage blob upload-batch --source $(System.DefaultWorkingDirectory)/drop --destination https://$(armOutputVariable.storageAccName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccName.value) --account-key $(KEY)
+      az storage blob upload-batch --source $(System.DefaultWorkingDirectory)/drop --destination https://$(armOutputVariable.storageAccName.value).blob.core.windows.net/$web --account-name $(armOutputVariable.storageAccountName.value) --account-key $(KEY)
 
 #- task: AzureFileCopy@4
 #  inputs: 
