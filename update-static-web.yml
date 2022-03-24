@@ -4,7 +4,9 @@
 # https://aka.ms/yaml
 
 trigger:
-- none
+ branches:
+  include:
+    - Test-Branch-RM
 
 pool:
   vmImage: windows-latest
@@ -32,4 +34,4 @@ steps:
       # Purge CDN Endpoint of existing web files
       CDNPROFILE=$(az cdn profile list -g $(resourceGroupName) --query [0].name -o tsv)
       CDNENDPOINT=$(az cdn endpoint list -g $(resourceGroupName) --profile-name $CDNPROFILE --query [0].name -o tsv)    
-      az cdn endpoint purge -g $(resourceGroupName) --name $CDNENDPOINT --content-paths '/*' --profile-name $CDNPROFILE 
+      az cdn endpoint purge -g $(resourceGroupName) --name $CDNENDPOINT --content-paths '/index.html' --profile-name $CDNPROFILE 
