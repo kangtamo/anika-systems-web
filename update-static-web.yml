@@ -4,10 +4,8 @@
 # https://aka.ms/yaml
 
 trigger:
- branches:
-  include:
-    - Test-Branch-RM
-
+  none
+  
 pool:
   vmImage: windows-latest
 
