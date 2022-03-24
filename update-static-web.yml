@@ -31,5 +31,5 @@ steps:
       az storage blob upload-batch --overwrite=True --source '$(Build.ArtifactStagingDirectory)' --destination '$web' --account-name $(storageAccountName) --account-key $KEY
       # Purge CDN Endpoint of existing web files
       CDNPROFILE=$(az cdn profile list -g $(resourceGroupName) --query [0].name -o tsv)
-      CDNENDPOINT= $(az cdn endpoint list -g $(resourceGroupName) --profile-name $CDNPROFILE)    
-      az cdn endpoint purge -g $(resourceGroupName) -n $CDNENDPOINT --content-paths '/index.html' --profile-name $CDNPROFILE
+      CDNENDPOINT=$(az cdn endpoint list -g $(resourceGroupName) --profile-name $CDNPROFILE)    
+      az cdn endpoint purge -g $(resourceGroupName) --name $CDNENDPOINT --content-paths '/index.html' --profile-name $CDNPROFILE
