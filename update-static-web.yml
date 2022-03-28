@@ -1,0 +1,35 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  none
+  
+pool:
+  vmImage: windows-latest
+
+steps:
+# Copy Repo Files into variable so next task can consume 
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    
+# Batch upload repo (website) files to SA $web container, overwrite any existing files 
+- task: AzureCLI@2
+  inputs:
+     azureSubscription: 'Static-Web-Connection'
+     scriptType: 'bash'
+     scriptLocation: 'inlineScript'
+     inlineScript: |
+      #!/bin/bash
+
+      # Dynamically retrieve new SA key 
+      KEY=$(az storage account keys list -g $(resourceGroupName) -n $(storageAccountName) --query [0].value -o tsv)
+      # Batch upload all repo (website) files to new SA $web container
+      az storage blob upload-batch --overwrite=True --source '$(Build.ArtifactStagingDirectory)' --destination '$web' --account-name $(storageAccountName) --account-key $KEY
+      # Purge CDN Endpoint of existing web files
+      CDNPROFILE=$(az cdn profile list -g $(resourceGroupName) --query [0].name -o tsv)
+      CDNENDPOINT=$(az cdn endpoint list -g $(resourceGroupName) --profile-name $CDNPROFILE --query [0].name -o tsv)    
+      az cdn endpoint purge -g $(resourceGroupName) --name $CDNENDPOINT --content-paths '/*' --profile-name $CDNPROFILE 
