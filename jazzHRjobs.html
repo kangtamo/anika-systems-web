@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8"/>
+      <meta name="author" content="Nikhil Koneru" />
+      <meta name="description" content="Anika Sytems">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <title>Anika Systems</title>
+      <!-- Royal Preloader CSS -->
+      <link href="https://fonts.googleapis.com/css?family=Cinzel:700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700i" rel="stylesheet">
+      <link rel="icon" href="images/logosmall.png">
+      <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+      <!-- Royal Preloader -->
+      <style type="text/css">
+         html{
+         font-family: "Montserrat", sans-serif!important;
+         }
+         ul.nav li.dropdown:hover ul.dropdown-menu {
+         display: block;
+         }
+         .btn-outline-success {
+         margin-top: 15px!important;
+         border-width: 2px!important;
+         background-color: white;
+         color: #fe0010;
+         border-color: #fe0010!important;
+         border-radius: 40px!important;
+         width: 140px;
+         height: 45px;
+         font-size: 14px!important;
+         font-weight: 700!important;
+         font-family: "Montserrat", sans-serif!important;
+         text-transform: uppercase!important;
+         padding: 10px 15px!important;
+         letter-spacing: .8px!important;
+         }
+         .btn-outline-success:hover {
+         color: white!important;
+         font-size: 15px;
+         font-weight: 800;
+         font-family: "Montserrat", sans-serif!important;
+         text-transform: uppercase;
+         padding: 10px 15px;
+         letter-spacing: .8px;
+         }
+         .dropdown-item {
+         position: relative;
+         padding: 10px 20px;
+         border-bottom: 0px;
+         }
+         .app-header .nav-item .nav-link {
+         padding-top: 5px;
+         padding-bottom: 5px;
+         background: 0;
+         border: 0;
+         }
+         .header-fixed .app-header{
+         position: fixed;
+         z-index: 1020;
+         width: 100%;
+         height: 80px;
+         }
+         .navbar-nav>li>.dropdown-menu {
+         margin-top: 20px;
+         position: absolute;
+         z-index: 0px;
+         padding: 0px;
+         }
+         .dropdown-menu.subwok {
+         left: 50%;
+         transform: translateX(-50%);
+         z-index: 100;
+         -webkit-box-shadow: 0px 10px 10px #777;
+         -moz-box-shadow: 0px 10px 10px #777;
+         box-shadow: 0px 10px 10px #777;
+         }
+         .navbar-nav .nav-link:hover {
+         }
+         .navbar-default .navbar-nav > li > a {
+         font-size: 14px!important;
+         text-transform: uppercase;
+         font-weight: 700!important;
+         /* padding: 5px 7px;*/
+         padding-right: 20px!important;
+         letter-spacing: .2px!important;
+         }
+         .dropdown-menu > li > a {
+         font-size: 13px;
+         font-weight: 500;
+         font-family: "Montserrat", sans-serif!important;
+         text-transform: capitalize;
+         /*padding: 8px 15px;*/
+         letter-spacing: .8px;
+         }
+         .dropdown-item{
+         font-size: 12px;
+         font-weight: 600;
+         font-family: "Montserrat", sans-serif!important;
+         text-transform: uppercase;
+         padding: 10px 15px;
+         letter-spacing: .8px;
+         }
+         .navbar-nav > li{
+         padding-left:0px;
+         padding-right:0px;
+         }
+         button.btn.btn-outline-success.my-2.my-sm-0:hover {
+         background: red;
+         border: red;
+         }
+         .dropdown-submenu {
+         position: relative;
+         }
+         .dropdown-submenu .dropdown-menu {
+         top: 0;
+         left: 100%;
+         margin-top: -1px;
+         }
+         .indextsize{
+         font-family: "Montserrat", sans-serif!important;
+         font-size: 60px!important;
+         font-weight: bold;
+         }
+         .subtsize{
+         font-family: "Montserrat", sans-serif!important;
+         font-size: 20px!important;
+         font-weight: bold!important;
+         }
+         .indexscsize{
+         font-weight: bold!important;
+         }
+         .headingindex{
+         font-weight: bold!important;
+         font-size: 20px!important;
+         }
+         .txtoa b{
+         font-weight: 300;
+         font-size: 20px!important;
+         }
+         .black{
+         background-color: black!important;
+         }
+         /* Underline From Center */
+         .hvr-underline-from-center {
+         display: inline-block;
+         vertical-align: middle;
+         -webkit-transform: translateZ(0);
+         transform: translateZ(0);
+         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+         -webkit-backface-visibility: hidden;
+         backface-visibility: hidden;
+         -moz-osx-font-smoothing: grayscale;
+         position: relative;
+         overflow: hidden;
+         }
+         .hvr-underline-from-center:before {
+         content: "";
+         position: absolute;
+         z-index: -1;
+         left: 50%;
+         right: 50%;
+         bottom: 0;
+         background: red;
+         height: 4px;
+         -webkit-transition-property: left, right;
+         transition-property: left, right;
+         -webkit-transition-duration: 0.3s;
+         transition-duration: 0.3s;
+         -webkit-transition-timing-function: ease-out;
+         transition-timing-function: ease-out;
+         }
+         .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+         left: 0;
+         right: 0;
+         }
+         /* Shutter Out Horizontal */
+         .hvr-shutter-out-horizontal {
+         display: inline-block;
+         vertical-align: middle;
+         -webkit-transform: translateZ(0);
+         transform: translateZ(0);
+         box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+         -webkit-backface-visibility: hidden;
+         backface-visibility: hidden;
+         -moz-osx-font-smoothing: grayscale;
+         position: relative;
+         -webkit-transition-property: color;
+         transition-property: color;
+         -webkit-transition-duration: 0.3s;
+         transition-duration: 0.3s;
+         }
+         .hvr-shutter-out-horizontal:before {
+         content: "";
+         position: absolute;
+         z-index: -1;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         background: #2098d1;
+         -webkit-transform: scaleX(0);
+         transform: scaleX(0);
+         -webkit-transform-origin: 50%;
+         transform-origin: 50%;
+         -webkit-transition-property: transform;
+         transition-property: transform;
+         -webkit-transition-duration: 0.3s;
+         transition-duration: 0.3s;
+         -webkit-transition-timing-function: ease-out;
+         transition-timing-function: ease-out;
+         }
+         .hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
+         color: #fff;
+         }
+         .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
+         -webkit-transform: scaleX(1);
+         transform: scaleX(1);
+         }
+         /* Fix bootstrap */
+         .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > li > a:active {
+         background: none;
+         color: #fff;
+         }
+         .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open>a:focus, .navbar-default .navbar-nav > .open > a:active {
+         background: none;
+         color: #555;
+         }
+         body {
+         font-family: "Montserrat", sans-serif!important;
+         }
+         .dropdown-menu > li > a {
+         display: block;
+         padding: 3px 10px;
+         clear: both;
+         font-weight: 550;
+         line-height: 1.42857;
+         color: black!important;
+         white-space: nowrap;
+         font-size: 14px;
+         }
+         .navbar-nav>li>.dropdown-menu {
+         margin-top: 0px;
+         position: absolute;
+         z-index: 0px;
+         padding-top: 10px;
+         }
+         .dropdown-menu {
+         background-color: #fff!important;
+         border: 1px solid rgba(66,67,66,1);
+         min-width: 150px;
+         box-shadow: none;
+         padding: 12px 0;
+         }
+         ul.nav li.dropdown:hover ul.dropdown-menu {
+         display: block;
+         }
+         .colorbox{
+         font-weight: bold!important;
+         }
+         .nav >a:focus, .nav>a:hover, .colorbox:focus, .colorbox:hover {
+         background-color: red!important;
+         color: white!important;
+         border-color: none;
+         }
+.navbar-nav>li>.dropdown-menu {
+
+    position: absolute;
+    z-index: 0px;
+    padding: 0px;
+    min-width: 15vw!important;
+}
+.navbar-nav .dropdown-menu > li > a {
+    white-space: normal;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+      </style>
+      <!-- Stylesheets -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+      <link href="css/ionicons.min.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/fonts.css">
+      <link rel="stylesheet" type="text/css" href="css/colors/red.css" title="red">
+      <!-- Web Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+      <!-- Bootstrap core CSS -->
+      <!-- <link href="testcareers/bootstrap/css/bootstrap.css" rel="stylesheet"> -->
+      <!-- Font Awesome CSS -->
+      <link href="testcareers/font-awesome.css" rel="stylesheet">
+      <!-- Plugins -->
+      <link href="testcareers/magnific-popup.css" rel="stylesheet">
+      <link href="testcareers/animations.css" rel="stylesheet">
+      <link href="testcareers/slick.css" rel="stylesheet">
+      <!-- The Project's core CSS file -->
+      <!-- Use css/rtl_style.css for RTL version -->
+      <link href="testcareers/style.css" rel="stylesheet" >
+      <!-- The Project's Typography CSS file, includes used fonts -->
+      <!-- Used font for body: Roboto -->
+      <!-- Used font for headings: Raleway -->
+      <!-- Use css/rtl_typography-default.css for RTL version -->
+      <link href="testcareers/typography-default.css" rel="stylesheet" >
+      <!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer) -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+      <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+      <!-- Custom css -->
+      <!-- CSS styles for adjusting the position of Background Video -->
+      <style>
+         @media (max-width: 1200px) {
+         .video-background-banner video,
+         .video-background video {
+         width: 100%;
+         bottom: 0 !important;
+         top: auto !important;
+         }
+         }
+         @media (max-width: 767px) {
+         .video-background-banner video,
+         .video-background video {
+         width: 750px;
+         bottom: 0 !important;
+         top: auto !important;
+         }
+         }
+         .maintext{
+         font-family: "Montserrat", sans-serif!important;
+         }
+         .backgroundclass{
+         background-color: black;
+         }
+         .navbar-nav {
+         font-family: "Montserrat", sans-serif!important;
+         }
+         .navbar-default .navbar-nav > li > a {
+         padding-right: 15px!important;
+         }
+         ul{
+         padding-inline-start: 0px;
+         }
+         .responsive{
+         height: 80px;
+         width: 80px;
+         }
+         .
+         @media screen and (max-width: 600px) {
+         .responsive{
+         height: 30px;
+         width: 30px;
+         }
+         }
+         @media screen and (max-width: 992px) {
+         .responsive{
+         height: 40px;
+         width: 40px;
+         }
+         }
+         .hc-item-box-2 .body {
+         margin-left: 90px;
+         }
+         .img-responsive{
+         width: auto;
+         height: 50px;
+         overflow: hidden;
+         }
+         @media screen and (min-width: 800px) {
+         .colcard{
+         padding-bottom: 30px;
+         }
+         }
+         @media screen and (min-width: 800px) {
+         .responsive-lineheight{
+         line-height: 2;
+         }
+         }
+         @media screen and (max-width: 800px) {
+         .responsive-lineheight{
+         line-height: 0.9;
+         }
+         }
+         .dropdown-menu > li > a {
+         display: block;
+         padding: 3px 10px;
+         clear: both;
+         font-weight: 550;
+         line-height: 1.42857;
+         color: black!important;
+         white-space: nowrap;
+         font-size: 14px;
+         }
+         .navbar-nav>li>.dropdown-menu {
+         margin-top: 0px;
+         position: absolute;
+         z-index: 0px;
+         padding-top: 10px;
+         }
+         .dropdown-menu {
+         background-color: #fff!important;
+        border: 1px solid rgba(66,67,66,1);
+         min-width: 150px;
+         box-shadow: none;
+         padding: 12px 0;
+         }
+         ul.nav li.dropdown:hover ul.dropdown-menu {
+         display: block;
+         }
+         .colorbox{
+         font-weight: bold!important;
+         font-family: font-family: 'Montserrat', sans-serif!important;
+         }
+         .nav >a:focus, .nav>a:hover, .colorbox:focus, .colorbox:hover {
+         background-color: red!important;
+         color: white!important;
+         border-color: none;
+         }
+         .main-menu-btn {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  text-indent: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+/* hamburger icon */
+.main-menu-btn-icon, .main-menu-btn-icon:before, .main-menu-btn-icon:after {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  height: 2px;
+  width: 24px;
+  background: white;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.main-menu-btn-icon:before {
+  content: '';
+  top: -7px;
+  left: 0;
+}
+.main-menu-btn-icon:after {
+  content: '';
+  top: 7px;
+  left: 0;
+}
+/* x icon */
+#main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon {
+  height: 0;
+  background: transparent;
+}
+#main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:before {
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#main-menu-state:checked ~ .main-menu-btn .main-menu-btn-icon:after {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* hide menu state checkbox (keep it visible to screen readers) */
+#main-menu-state {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(1px,1px,1px,1px);
+}
+/* hide the menu in mobile view */
+#main-menu-state:not(:checked) ~ #main-menu {
+  display: none;
+}
+#main-menu-state:checked ~ #main-menu {
+  display: block;
+}
+@media (min-width: 768px) {
+  /* hide the button in desktop view */
+  .main-menu-btn {
+    position: absolute;
+    top: -99999px;
+  }
+  /* always show the menu in desktop view */
+  #main-menu-state:not(:checked) ~ #main-menu {
+    display: block;
+  }
+}
+
+
+@media (min-width: 768px){
+.right {
+    float: right!important;
+     margin-right: 50px!important;
+}}
+.navbar-nav.sm-collapsible .caret, .navbar-nav.sm-collapsible ul .caret {
+    width: 40px;
+}
+      </style>
+   </head>
+   <body class="" data-spy="scroll" data-target=".navbar" data-offset="70">
+      <!-- Begin Header -->
+      <header>
+         <!-- Begin Navigation -->
+         <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+               <div class="row">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                     <input id="main-menu-state" type="checkbox" />
+<label class="main-menu-btn" for="main-menu-state">
+  <span class="main-menu-btn-icon"></span>
+</label>
+                     </button>
+                     <a class="navbar-brand scroll-link" href="index.html" data-id="home"><img style="position: absolute; top: 8px;" src="images/Logo.png" width="200px"></a>
+                  </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                     <ul class="nav navbar-nav right">
+
+                        <li><a class="hvr-underline-from-center maintext" href="index.html#approach" data-id="home" style="color: white;">Philosophy</a></li>
+                        <li>
+                           <a class="hvr-underline-from-center" href="capabilities.html">What We Do<span class="caret"></span></a>
+                           <ul class="dropdown-menu">
+                              <li>
+                                 <a class="colorbox" href="capabilities.html">Capabilities<span class="caret"></span></a>
+                                 <ul class="dropdown-menu">
+                                    <li>
+                                       <a class="colorbox" href="capabilities.html#capabilitiesspan">Data and Analytics</a>
+                                    </li>
+                                    <li>
+                                       <a class="colorbox" href="capabilities.html#iaspan">Intelligent Automation</a>
+                                    </li>
+                                    <li>
+                                       <a class="colorbox" href="capabilities.html#apdspan">Application Development</a>
+                                    </li>
+                                    <li>
+                                       <a class="colorbox" href="capabilities.html#emspan">IT Modernization</a>
+
+                                    </li>
+                                    <li>
+                                       <a class="colorbox" href="capabilities.html#csspan">Cloud Engineering</a>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <a class="colorbox" href="capabilities.html#techspan">Partners<span class="caret"></span></a>
+                                 <ul class="dropdown-menu">
+                                    <li><a class="colorbox" href="capabilities.html#techspan">Microsoft Azure</a></li>
+                                    <li><a class="colorbox" href="capabilities.html#cloudbees">Cloud Bees</a></li>
+                                    <li><a class="colorbox" href="capabilities.html#uipath">UI Path</a></li>
+                                    <li><a class="colorbox" href="capabilities.html#redhat">Red Hat</a></li>
+                                    <li><a class="colorbox" href="capabilities.html#pg">Pivotal GreenPlum</a></li>
+                                    <li><a class="colorbox" href="capabilities.html#tu">Tableau</a></li>
+                                 </ul>
+                              </li>
+                           </ul>
+                        </li>
+                        <li><a class="hvr-underline-from-center maintext" href="whoweare.html" data-id="home" style="color: white;">Who We Are</a></li>
+                        <li><a class="hvr-underline-from-center maintext" href="contracts.html" data-id="home" style="color: white;">Contracts</a></li>
+                        <li><a class="hvr-underline-from-center maintext" href="careers.html" data-id="home" style="color: white;">Careers</a></li>
+                        <li><button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href='contact.html'" type="submit">Contact</button></li>
+                     </ul>
+                  </div>
+                  <!-- /.navbar-collapse -->
+               </div>
+            </div>
+            <!-- /.container-fluid -->
+         </nav>
+         <!-- End Navigation -->
+      </header>
+      <!-- End Header -->
+      <div class="scrollToTop circle"><i class="fa fa-angle-up"></i></div>
+      <!-- page wrapper start -->
+      <!-- ================ -->
+      <div class="page-wrapper">
+         <!-- header-container end -->
+         <!-- banner start -->
+         <!-- ================ -->
+         <div class="banner video-background-banner pv-40 dark-translucent-bg hovered">
+            <div class="video-background-poster" style="background-image: url('videos/video-banner-poster.jpg');"></div>
+            <video autoplay loop muted style="top:-100%; left: 0;" poster="images/keyboard.jpg">
+               <source src="videos/keyboard2.mp4" type="video/mp4">
+               <source src="videos/keyboard2.webm" type="video/webm">
+            </video>
+            <!-- breadcrumb start -->
+            <!-- ================ -->
+            <!-- breadcrumb end -->
+            <div class="container">
+               <div class="row justify-content-lg-center">
+                  <div class="text-center ">
+                     <h1 class="title hc-element-invisible maintext" data-animation-effect="fadeIn" data-effect-delay="100"><b class="maintext">Careers</b></h1>
+                     <div class="separator hc-element-invisible mt-10" data-animation-effect="fadeIn" data-effect-delay="100"></div>
+                     <b class="text-center hc-element-invisible maintext" data-animation-effect="fadeIn" data-effect-delay="100" style="font-weight: 300;
+                        font-size: 20px!important">Lets help the government by changing the way they work with technology</b>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- banner end -->
+         <!-- main-container start -->
+         <!-- ================ -->
+         <section class="main-container backgroundclass">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h2 class="maintext"> <strong style="color: white"> MULTIPLE OPENINGS </strong></h2>
+                     <div class="separator-2"></div>
+                     <b style="font-weight: 300;
+                        font-size: 20px!important;font-family: 'Montserrat', sans-serif!important;color: white">
+                    <h2 class="mt-4">Join us and lead tommorow</h2> 
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- main-container end -->
+         <!-- section start -->
+         <!-- ================ -->
+         <!-- section end -->
+         <!-- footer top start -->
+         <!-- ================ -->
+         <div class="dark-bg default-hovered footer-top animated-text">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class=" text-center">
+                        <div class="row">
+                           <div class="col-md-8">
+                              <script type="text/javascript" src="https://app.jazz.co/widgets/basic/create/anikasystems" charset="utf-8"></script>
+                           </div>
+                           <div class="col-md-4">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- footer top end -->
+      </div>
+      <!-- Begin Footer -->
+      <footer class=" footer-padding" style="background-color: white;padding-top: 30px;padding-bottom: 10px">
+         <div class="container">
+            <div class="row mb30">
+               <!-- Logo -->
+               <div class="col-sm-4">
+                  <!-- <span class="icon-handle-streamline-vector logo"></span> -->
+                  <p class="no-margin text-switch" style="color: black;font-family: 'Montserrat', sans-serif!important;font-size: 18px;">
+                     At Anika Systems, we are more than a technology consulting firm. We view our clients as partners and actively collaborate with them to achieve long-term success and make a significant contribution to their mission goals.
+                  </p>
+               </div>
+               <!-- /.column -->
+               <!-- Social -->
+               <div class="col-sm-4 mt30-xs">
+                 <img style="width: 100%;" src="certificates/image1.png" class="img-responsive">
+                 <div class="row">
+                  <div class="col-md-12">
+                 <img style="width: 100%;height:auto;" src="certificates/image2.png" class="img-responsive">
+                 </div>
+                  <div class="col-md-12">
+                 <img style="width: 100%;height:auto;" src="certificates/cmmisvc.png" class="img-responsive">
+                 </div>
+                 </div>
+               </div>
+               <!-- /.column -->
+               <!-- List -->
+               <!-- /.column -->
+               <!-- Contact -->
+               <div class="col-sm-4 mt30-xs">
+                  <h5 class="heading-1 mb20" style="color: black; font-family: 'Montserrat', sans-serif!important;"><b>Contact Us</b></h5>
+                  <h5 class="mb15" style="color: black;text-transform: none;font-family: 'Montserrat', sans-serif!important;"><strong class="text-switch" style="color: black;">161 Fort Evans Rd NE,<br> Suite 250,Leesburg VA 20176 </strong></h5>
+                  <h5 class="mb15" style="color: black;text-transform: none;font-family: 'Montserrat', sans-serif!important;"><strong class="text-switch" style="color: black;">Email: info@anikasystems.com </strong></h5>
+                  <h5 class="mb15" style="color: black;text-transform: none;font-family: 'Montserrat', sans-serif!important;"><strong class="text-switch" style="color: black;">Phone: +1 703-244-0158</strong></h5>
+                  <ul class="list-inline">
+                     <li><a href="https://www.linkedin.com/company/anika-systems/about/" style="display: block;
+                        background-color: red;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 100%;
+                        font-size: 20px;
+                        text-align: center;
+                        line-height: 40px;
+                        color: white;
+                        outline: none;
+                        margin-bottom: 15px;
+                        -webkit-transition: all 0.4s;
+                        -moz-transition: all 0.4s;
+                        transition: all 0.4s;"><i class="fab fa-linkedin"></i></a></li>
+                     <li><a href="https://medium.com/@anikasystemsinc" style="display: block;
+                        background-color: red;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 100%;
+                        font-size: 20px;
+                        text-align: center;
+                        line-height: 40px;
+                        color: white;
+                        outline: none;
+                        margin-bottom: 15px;
+                        -webkit-transition: all 0.4s;
+                        -moz-transition: all 0.4s;
+                        transition: all 0.4s;"><i class="fab fa-medium"></i></a></li>
+                     <li><a href="https://twitter.com/anikasystemsinc" style="display: block;
+                        background-color: red;
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 100%;
+                        font-size: 20px;
+                        text-align: center;
+                        line-height: 40px;
+                        color: white;
+                        outline: none;
+                        margin-bottom: 15px;
+                        -webkit-transition: all 0.4s;
+                        -moz-transition: all 0.4s;
+                        transition: all 0.4s;"><i class="fab fa-twitter"></i></a></li>
+                  </ul>
+               </div>
+               <!-- /.column -->
+            </div>
+            <div class="row">
+               <div class="col-sm-12 text-center">
+                  <h5 class="mb15" style="color: black;font-family: 'Montserrat', sans-serif!important;margin-bottom: 10px!important;"><strong class="text-switch" style="color: black;text-transform: none">© 2021 Anika Systems</strong></h5>
+                  <h5 class="mb15" style="color: black;font-family: 'Montserrat', sans-serif!important;line-height: 0;"><strong class="text-switch" style="color: black;text-transform: none">All Rights Reserved</strong></h5>
+               </div>
+               <!-- /.column -->
+            </div>
+            <!-- /.row -->
+         </div>
+         <!-- /.container -->
+      </footer>
+      <script src="testcareers/jquery.min.js"></script>
+      <script src="testcareers/bootstrap.bundle.min.js"></script>
+      <!-- Magnific Popup javascript -->
+      <script src="testcareers/jquery.magnific-popup.min.js"></script>
+      <!-- Appear javascript -->
+      <script src="testcareers/jquery.waypoints.min.js"></script>
+      <script src="testcareers/sticky.min.js"></script>
+      <!-- Count To javascript -->
+      <script src="testcareers/jquery.countTo.js"></script>
+      <!-- Slick carousel javascript -->
+      <script src="testcareers/slick.min.js"></script>
+      <!-- Initialization of Plugins -->
+      <script src="testcareers/template.js"></script>
+      <!-- Custom Scripts -->
+      <script src="testcareers/custom.js"></script>
+       <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+      <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>
+      <!-- Color Switcher (Remove these lines) -->
+      <script src="testcareers/style-switcher.js"></script>
+   </body>
+</html>
