@@ -818,6 +818,22 @@ input[type="button"]:focus {
   outline: 0;
 }
 
+/* Progress bar
+ * ------------------------------------------------- */
+.progress-bar { 
+  height: 20px;
+  background: red; 
+  width: 0px;
+  text-align: center;
+  border: 2px solid gray;
+}
+
+.pp{
+  width : 600px;
+  background-color: #e0e0e0;
+}
+
+
 /* button primary
  * ------------------------------------------------- */
 .btn.btn--primary,

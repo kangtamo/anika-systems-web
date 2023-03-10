@@ -20,10 +20,38 @@ $("#contactForm").validator().on("submit", function(event) {
         formError();
         submitMSG(false, "Did you fill in the form properly?");
     } else {
-        event.preventDefault();
+        $(this).attr("disabled", "disabled");
+        bigProgress();
         submitForm();
+        event.preventDefault();
     }
+    // littleProgress()
 });
+
+
+// function littleProgress(){
+//     $('.progress-bar').animate(
+//     {
+//         width: '0%'
+//     }, 
+//     {
+//         duration: 100
+//     }        
+//     );
+// }  
+
+
+function bigProgress(){
+    $('.progress-bar').animate(
+    {
+        width: '35%'
+    }, 
+    {
+        duration: 6000      
+    }        
+    );
+}  
+
 function submitForm() {
     // Initiate Variables With Form Content
     $.ajax({
@@ -46,6 +74,7 @@ function submitForm() {
 function formSuccess() {
     $("#contactForm")[0].reset();
     submitMSG(true, "Message Submitted!")
+    setTimeout('$("#contactForm").removeAttr("disabled")', 1500)
 
 }
 function formError() {
