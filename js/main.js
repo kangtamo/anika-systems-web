@@ -21,10 +21,13 @@ $("#contactForm").validator().on("submit", function(event) {
         submitMSG(false, "Did you fill in the form properly?");
     } else {
         event.preventDefault();
+        submitForm()
     }
 });
 
 function submitForm() {
+    document.getElementById("submitb").disabled = true;
+
     // Initiate Variables With Form Content
     $.ajax({
         type: "POST",
@@ -46,7 +49,7 @@ function submitForm() {
 function formSuccess() {
     $("#contactForm")[0].reset();
     submitMSG(true, "Message Submitted!")
-
+    document.getElementById("submitb").disabled = false;
 }
 function formError() {
     $("#contactForm").removeClass().addClass('shake animated').one(
@@ -54,6 +57,7 @@ function formError() {
         function() {
             $(this).removeClass();
         });
+    document.getElementById("submitb").disabled = false;
 }
 function submitMSG(valid, msg) {
     if (valid) {
