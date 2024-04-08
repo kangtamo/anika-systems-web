@@ -1,0 +1,11 @@
+
+trigger:
+- MSDO-Pipeline-NW
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: MicrosoftSecurityDevOps@1
+  inputs:
+    command: 'run'
