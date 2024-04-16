@@ -8,15 +8,16 @@ trigger:
   branches:
     include:
       - test
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- group: azure-static-web-apps-ashy-forest-0deb7560f-variable-group
 
 jobs:
 - job: build_and_deploy_job
   displayName: Build and Deploy Job
   condition: or(eq(variables['Build.Reason'], 'Manual'),or(eq(variables['Build.Reason'], 'PullRequest'),eq(variables['Build.Reason'], 'IndividualCI')))
-  pool:
-    vmImage: ubuntu-latest
-  variables:
-  - group: azure-static-web-apps-ashy-forest-0deb7560f-variable-group
   steps:
   - checkout: self
     submodules: true
@@ -30,14 +31,16 @@ jobs:
       api_location: "" # Api source code path - optional
       output_location: "" # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
-
-- deployment: AdminReview
-  displayName: Review changes in .cloud before PRing to main
-  environment: 'Test'
-  strategy:
-    runOnce:
-      deploy:
-        steps:
-        - script: echo Deploying to Test!
+- job: create_pr
+  steps:
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        echo $(PAT) | az devops login --organization https://dev.azure.com/AnikaSystems
+        az repos pr create --organization https://dev.azure.com/AnikaSystems \
+          --project CorporateWebsite --repository Azure-LZ-Bicep --title '$(System.TeamProject)-$(Build.BuildNumber)-AutoPR' \
+          --source-branch test --target-branch Test-Branch-NW
+        az devops logout
 
 
