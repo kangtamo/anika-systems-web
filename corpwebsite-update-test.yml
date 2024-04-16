@@ -41,6 +41,7 @@ jobs:
         az repos pr create --organization https://dev.azure.com/AnikaSystems \
           --project CorporateWebsite --repository anikasystems-ui-v1 --title '$(System.TeamProject)-$(Build.BuildNumber)-AutoPR' \
           --source-branch test --target-branch Test-Branch-NW
+          --description "This PR was created automatically because code was pushed to Test.\nReview the .cloud site to ensure that the changes are stable before approving.\nOnce approved, the code will be merged into main, triggering SFTP to .com site."
         az devops logout
 
 
