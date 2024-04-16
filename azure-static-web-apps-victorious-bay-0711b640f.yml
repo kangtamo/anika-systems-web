@@ -1,13 +1,13 @@
 name: Azure Static Web Apps CI/CD
 
-pr:
-  branches:
-    include:
-      - Test-Branch-RM
+# pr:
+#   branches:
+#     include:
+#       - Test-Branch-RM
 trigger:
   branches:
     include:
-      - Test-Branch-RM
+      - test
 
 jobs:
 - job: build_and_deploy_job
@@ -16,13 +16,13 @@ jobs:
   pool:
     vmImage: ubuntu-latest
   variables:
-  - group: Azure-Static-Web-Apps-victorious-bay-0711b640f-variable-group
+  - group: azure-static-web-apps-ashy-forest-0deb7560f-variable-group
   steps:
   - checkout: self
     submodules: true
   - task: AzureStaticWebApp@0
     inputs:
-      azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_BAY_0711B640F)
+      azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_FOREST_0DEB7560F)
 ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
 # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
       app_location: "/" # App source code path
