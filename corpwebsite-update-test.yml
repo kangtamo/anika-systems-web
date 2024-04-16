@@ -39,7 +39,7 @@ jobs:
       script: |
         echo $(PAT) | az devops login --organization https://dev.azure.com/AnikaSystems
         az repos pr create --organization https://dev.azure.com/AnikaSystems \
-          --project CorporateWebsite --repository Azure-LZ-Bicep --title '$(System.TeamProject)-$(Build.BuildNumber)-AutoPR' \
+          --project CorporateWebsite --repository anikasystems-ui-v1 --title '$(System.TeamProject)-$(Build.BuildNumber)-AutoPR' \
           --source-branch test --target-branch Test-Branch-NW
         az devops logout
 
