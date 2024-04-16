@@ -41,7 +41,7 @@ jobs:
         az repos pr create --organization https://dev.azure.com/AnikaSystems \
           --project CorporateWebsite --repository anikasystems-ui-v1 --title '$(System.TeamProject)-$(Build.BuildNumber)-AutoPR' \
           --source-branch test --target-branch Test-Branch-NW \
-          --description "This PR was created automatically because code was pushed to Test." " " "IMPORTANT: Review the .cloud site to ensure that the changes are stable before approving." " " "CODE WILL BE PUSHED TO .com SITE UPON COMPLETING THIS MERGE."
+          --description "This PR was created automatically because code was pushed to Test." " " "IMPORTANT: Review the .cloud site to ensure that the changes are stable before approving." " " "CODE WILL BE PUSHED TO anikasystems.com UPON COMPLETING THIS MERGE."
         az devops logout
 
 
