@@ -40,8 +40,8 @@ jobs:
         echo $(PAT) | az devops login --organization https://dev.azure.com/AnikaSystems
         az repos pr create --organization https://dev.azure.com/AnikaSystems \
           --project CorporateWebsite --repository anikasystems-ui-v1 --title '$(System.TeamProject)-$(Build.BuildNumber)-AutoPR' \
-          --source-branch test --target-branch Test-Branch-NW
-          --description "This PR was created automatically because code was pushed to Test.\nReview the .cloud site to ensure that the changes are stable before approving.\nOnce approved, the code will be merged into main, triggering SFTP to .com site."
+          --source-branch test --target-branch Test-Branch-NW \
+          --description "This PR was created automatically because code was pushed to Test" "Review the .cloud site to ensure that the changes are stable before approving." "CODE WILL BE PUSHED TO .com SITE UPON COMPLETING THIS MERGE."
         az devops logout
 
 
