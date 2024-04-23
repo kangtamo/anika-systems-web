@@ -38,7 +38,6 @@ stages:
 - stage: create_pr_stage
   jobs:
   - job: create_pr_job
-    condition: succeeded('build_and_deploy_stage')
     steps:
     - task: Bash@3
       inputs:
