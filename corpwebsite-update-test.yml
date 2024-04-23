@@ -14,35 +14,41 @@ pool:
 variables:
 - group: Azure-Static-Web-Apps-victorious-bay-0711b640f-variable-group
 - group: Website-Update-VG
-jobs:
-- job: build_and_deploy_job
-  displayName: Build and Deploy Job
+stages:
+- stage: build_and_deploy_stage
   condition: or(eq(variables['Build.Reason'], 'Manual'),or(eq(variables['Build.Reason'], 'PullRequest'),eq(variables['Build.Reason'], 'IndividualCI')))
-  steps:
-  - checkout: self
-    submodules: true
-  - task: AzureStaticWebApp@0
-    inputs:
-      azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_BAY_0711B640F)
-      api_build_command: 
-      ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-# For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-      app_location: "/" # App source code path
-      api_location: "" # Api source code path - optional
-      output_location: "" # Built app content directory - optional
-###### End of Repository/Build Configurations ######
-- job: create_pr
-  condition: succeeded('build_and_deploy_job')
-  steps:
-  - task: Bash@3
-    inputs:
-      targetType: 'inline'
-      script: |
-        echo $(ADO-PAT) | az devops login --organization https://dev.azure.com/AnikaSystems
-        az repos pr create --organization https://dev.azure.com/AnikaSystems \
-          --project CorporateWebsite --repository anikasystems-ui-v1 --title '$(System.TeamProject)-$(Build.BuildNumber)-AutoPR' \
-          --source-branch test --target-branch main \
-          --description "This PR was created automatically because code was pushed to Test." " " "IMPORTANT: Review the .cloud site to ensure that the changes are stable before approving." " " "CODE WILL BE PUSHED TO anikasystems.com UPON COMPLETING THIS MERGE."
-        az devops logout
+  jobs: 
+  - job: build_and_deploy_job
+    displayName: Build and Deploy Job
+    condition: 
+    steps:
+    - checkout: self
+      submodules: true
+    - task: AzureStaticWebApp@0
+      inputs:
+        azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_BAY_0711B640F)
+        api_build_command: 
+        ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+  # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+        app_location: "/" # App source code path
+        api_location: "" # Api source code path - optional
+        output_location: "" # Built app content directory - optional
+  ###### End of Repository/Build Configurations ######
+
+- stage: create_pr_stage
+  jobs:
+  - job: create_pr_job
+    condition: succeeded('build_and_deploy_stage')
+    steps:
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: |
+          echo $(ADO-PAT) | az devops login --organization https://dev.azure.com/AnikaSystems
+          az repos pr create --organization https://dev.azure.com/AnikaSystems \
+            --project CorporateWebsite --repository anikasystems-ui-v1 --title '$(System.TeamProject)-$(Build.BuildNumber)-AutoPR' \
+            --source-branch test --target-branch main \
+            --description "This PR was created automatically because code was pushed to Test." " " "IMPORTANT: Review the .cloud site to ensure that the changes are stable before approving." " " "CODE WILL BE PUSHED TO anikasystems.com UPON COMPLETING THIS MERGE."
+          az devops logout
 
 
