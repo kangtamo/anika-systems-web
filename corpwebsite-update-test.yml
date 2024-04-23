@@ -13,6 +13,7 @@ pool:
 
 variables:
 - group: Azure-Static-Web-Apps-victorious-bay-0711b640f-variable-group
+- group: Website-Update-VG
 jobs:
 - job: build_and_deploy_job
   displayName: Build and Deploy Job
@@ -31,12 +32,13 @@ jobs:
       output_location: "" # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
 - job: create_pr
+  condition: succeeded('build_and_deploy_job')
   steps:
   - task: Bash@3
     inputs:
       targetType: 'inline'
       script: |
-        echo $(PAT) | az devops login --organization https://dev.azure.com/AnikaSystems
+        echo $(ADO-PAT) | az devops login --organization https://dev.azure.com/AnikaSystems
         az repos pr create --organization https://dev.azure.com/AnikaSystems \
           --project CorporateWebsite --repository anikasystems-ui-v1 --title '$(System.TeamProject)-$(Build.BuildNumber)-AutoPR' \
           --source-branch test --target-branch main \
