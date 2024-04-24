@@ -17,38 +17,27 @@ steps:
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
     contents: |
+      certificates/**
+      css/**
+      fonts/**
+      iconset/**
+      images/**
+      js/**
+      rapid/**
+      testcareers/**
+      videos/**
+      capabilities.html
+      careers.html
+      contact.html
+      contracts.html
       EmissionReport.pdf
+      index.html
+      jobs.html
+      sustainability.html
+      theresumator_helper.html
       whoweare.html
     targetFolder: '/'
     host: '$(IONOS-host)'
     port: '22'
     username: '$(IONOS-user)'
     password: '$(IONOS-pass)'
-# - task: sftpupload@1
-#   inputs:
-#     sourceFolder: '$(Build.SourcesDirectory)'
-#     contents: |
-#       certificates/**
-#       css/**
-#       fonts/**
-#       iconset/**
-#       images/**
-#       js/**
-#       rapid/**
-#       testcareers/**
-#       videos/**
-#       capabilities.html
-#       careers.html
-#       contact.html
-#       contracts.html
-#       EmissionReport.pdf
-#       index.html
-#       jobs.html
-#       sustainability.html
-#       theresumator_helper.html
-#       whoweare.html
-#     targetFolder: '/'
-#     host: '$(IONOS-host)'
-#     port: '22'
-#     username: '$(IONOS-user)'
-#     password: '$(IONOS-pass)'
