@@ -26,6 +26,7 @@ steps:
       rapid/**
       testcareers/**
       videos/**
+      docs/**
       capabilities.html
       careers.html
       contact.html
