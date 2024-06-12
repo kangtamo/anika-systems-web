@@ -37,6 +37,7 @@ steps:
       sustainability.html
       theresumator_helper.html
       whoweare.html
+      footer.html
     targetFolder: '/'
     host: '$(IONOS-host)'
     port: '22'
