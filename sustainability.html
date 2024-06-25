@@ -935,7 +935,7 @@
         </div>
     </section>
 
-    <iframe src="footer.html" width="100%" height="360" style="border:none;"></iframe>
+    <div id="footer"></div>
     <!-- Javascript Files -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.mixitup.js"></script>
@@ -946,6 +946,11 @@
     <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
     <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        $(function(){
+           $("#footer").load("footer.html"); 
+        });
+     </script>
 </body>
 
 </html>
