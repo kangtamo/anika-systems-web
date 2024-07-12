@@ -8,6 +8,7 @@ trigger:
   branches:
     include:
       - test
+      - feature/*
 pool:
   vmImage: ubuntu-latest
 
