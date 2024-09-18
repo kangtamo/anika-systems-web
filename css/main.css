@@ -173,13 +173,6 @@ h5, .h5 {
   line-height: 1.235;
 }
 
-h6, .h6 {
-  font-size: 1.4rem;
-  line-height: 1.286;
-  text-transform: uppercase;
-  letter-spacing: 0.16rem;
-}
-
 p img {
   margin: 0;
 }
