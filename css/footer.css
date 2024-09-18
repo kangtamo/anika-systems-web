@@ -1,0 +1,21 @@
+.footer-desc {
+    font-weight: 300;
+    color: black;
+}
+
+.footer-body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    padding-top: 10px;
+    color: #fff;
+    height: 100%;
+    min-height: 100% !important;
+}
+
+.footer-padding {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    background-color: white;
+}
+
