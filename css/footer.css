@@ -1,4 +1,4 @@
-.footer-desc {
+.footer-normal-font {
     font-weight: 300;
     color: black;
 }
@@ -6,6 +6,11 @@
 .footer-emissions-report {
     font-weight: 300;
     margin-top: 20px;
+}
+
+.footer-bold-font {
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .footer-body {
