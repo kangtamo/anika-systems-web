@@ -1,6 +1,19 @@
-.footer-normal-font {
+.footer-at-anika {
     font-weight: 300;
     color: black;
+    margin:0 !important;
+}
+
+.footer-contact-us {
+    font-weight: 300;
+    color: black;
+    margin-bottom:20px !important;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    border-bottom: 1px solid #424242;
+    padding-bottom: 4px;
+    display: inline-block;
+    margin: 0;
 }
 
 .footer-emissions-report {
