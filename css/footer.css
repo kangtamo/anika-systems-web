@@ -38,3 +38,21 @@
 .footer-p {
     margin: 0 0 10px 0;
 }
+
+.footer-a {
+    display: block;
+    background-color: red;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    outline: none;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
