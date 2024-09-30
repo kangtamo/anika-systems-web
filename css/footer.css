@@ -69,3 +69,15 @@
     -moz-transition: all 0.4s;
     transition: all 0.4s;
 }
+
+/* Default styling for larger screens (PCs) */
+.responsive-div {
+    text-align: center;
+}
+
+/* Media query for smaller screens (phones) */
+@media (max-width: 600px) {
+    .responsive-div {
+        text-align: left;
+    }
+}
