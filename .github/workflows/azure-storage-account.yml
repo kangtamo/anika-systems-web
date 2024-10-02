@@ -3,7 +3,11 @@ name: Deploy to Azure Storage
 on:
   push:
     branches:
-      - main
+      - feature/footer-style
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - feature/footer-style
 
 jobs:
   deploy:
