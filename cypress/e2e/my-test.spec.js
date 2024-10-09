@@ -2,11 +2,15 @@ describe('Static Website Tests', () => {
   
     it('Check if all links are valid', () => {
       cy.visit('https://kangtamo.github.io/anika-systems-web');
+      let linkCount = 0;
       cy.get('a').each(link => {
         const href = link.prop('href');
         if (href) {
+          linkCount++;
           cy.request(href).its('status').should('eq', 200);
         }
+      }).then(() => {
+        cy.log(`Total links checked: ${linkCount}`);
       });
     });
   
