@@ -27,8 +27,11 @@ jobs:
     - name: Run Cypress tests
       run: npm run cypress:run --headless --no-exit
 
-    - name: Count validated links in Cypress logs
+    - name: Parse Mochawesome results
       run: |
-        # Look for the line containing the total valid links count
-        count=$(grep "Total links checked:" cypress/results/*.log | awk '{print $4}')
-        echo "Total valid links: $count"
+        if [ -d "cypress/results" ]; then
+          result=$(jq '.stats.passes' cypress/results/*.json)
+          echo "Total valid links: $result"
+        else
+          echo "No Mochawesome results found"
+        fi
