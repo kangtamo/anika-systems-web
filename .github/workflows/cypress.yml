@@ -32,9 +32,9 @@ jobs:
 
     - name: Parse Mochawesome results
       run: |
-        if [ -d "cypress/results" ]; then
-          result=$(jq '.stats.passes' cypress/results/*.json)
-          echo "Total valid links: $result"
-        else
-          echo "No Mochawesome results found"
-        fi
+      if [ -d "cypress/results" ]; then
+        result=$(jq '.stats.passes' cypress/results/*.json)
+        echo "Total valid links: $result"
+      else
+        echo "No Mochawesome results found"
+      fi
