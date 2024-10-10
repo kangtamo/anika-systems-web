@@ -29,5 +29,4 @@ describe('Static Website Tests', () => {
     it('Test cross-browser compatibility', () => {
       // Set browser configurations in Cypress config for testing in multiple browsers
     });
-  
   });
